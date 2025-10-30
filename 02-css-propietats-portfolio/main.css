@@ -1,0 +1,171 @@
+/* ============================================
+          RESET I ESTILS BASE
+ ============================================ */
+* {
+}
+
+body {
+}
+
+/* ============================================
+          CONTENIDOR GENERAL (ENGLOBA TOT)
+ ============================================ */
+.container-portfolio {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ============================================
+          HEADER AMB IMATGE DE PERFIL
+============================================ */
+header {
+}
+
+/* Imatge de perfil */
+header img {
+}
+
+/* Nom principal */
+#nom-principal {
+}
+
+/* Subtítol professional */
+.rol-professional {
+}
+
+/* Descripció breu */
+header p {
+}
+
+/* ============================================
+          CONTINGUT PRINCIPAL (MAIN)
+============================================ */
+main {
+}
+
+/* ============================================
+          SECCIONS GENERALS
+============================================ */
+section.seccio {
+}
+
+/* Títols de secció */
+section.seccio > h2 {
+}
+
+/* ============================================
+          SECCIÓ - SOBRE MI
+============================================ */
+section.sobre-mi p {
+}
+
+/* ============================================
+          HABILITATS
+============================================ */
+ul.habilitats-llista {
+}
+
+/* Selector de descendent - Items dins de la llista */
+ul.habilitats-llista li {
+}
+
+/* Classes específiques per nivell */
+ul.habilitats-llista li.nivell-expert {
+}
+
+ul.habilitats-llista li.nivell-expert strong {
+}
+
+.habilitats-llista li.nivell-intermig {
+}
+
+ul.habilitats-llista li.nivell-intermig strong {
+}
+
+ul.habilitats-llista li.nivell-basic {
+}
+
+ul.habilitats-llista li.nivell-basic strong {
+}
+
+/* ============================================
+            PROJECTES
+============================================ */
+article.projecte {
+}
+
+/* Selector fill directe - Títol de projecte */
+article.projecte > h3 {
+}
+
+/* Imatges de projectes */
+article.projecte img {
+}
+
+/* Selector d'atribut - Enllaços amb href */
+article.projecte a[href] {
+}
+
+/* Paràgrafs dins de projectes */
+article.projecte p {
+}
+
+article.projecte p strong {
+}
+
+/* ============================================
+          EXPERIÈNCIA I FORMACIÓ
+============================================ */
+div.experiencia-item {
+}
+
+/* Títols dels contenidors d'experiència */
+div.experiencia-item h3 {
+}
+
+/* Selector germà adjacent - Paràgraf després del títol */
+div.experiencia-item h3 + p {
+}
+
+/* Elemenets em (dintre de l'element experiència) */
+div.experiencia-item em {
+}
+
+/* Selector germà general - Tots els paràgrafs després de l'empresa */
+div.empresa ~ p {
+}
+
+/* ============================================
+        CONTACTE
+============================================ */
+footer.contacte {
+}
+
+footer.contacte h2 {
+}
+
+footer.contacte > p {
+}
+
+/* Contenidor d'informació de contacte */
+footer.contacte .info-contacte {
+}
+
+/* Selector múltiple - Tots els enllaços i span de contacte */
+footer.contacte .info-contacte a,
+footer.contacte .info-contacte span {
+}
+
+footer.contacte .info-contacte span {
+}
+
+footer.contacte .info-contacte a[href] {
+}
+
+/* Selector d'atribut específic - Email */
+footer.contacte a[href^='mailto:'] {
+}
+
+/* Selector d'atribut específic - Telèfon */
+footer.contacte a[href^='tel:'] {
+}
