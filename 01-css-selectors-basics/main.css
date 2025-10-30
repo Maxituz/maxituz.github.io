@@ -3,11 +3,57 @@
 ============================================ */
 
 /* 1. Selector etiqueta - Estils generals*/
-
+html {
+  font-size: 16px;
+}
+body {
+  background-color: #eeeeee;
+  color: #333333;
+  font-family: Arial;
+  line-height: 1.6;
+}
+section {
+  background-color: bisque;
+}
 /* 2. Selector múltiple */
-
+h1,
+h2,
+h3 {
+  font-family: Georgia;
+  color: #1a5490;
+  background-color: #e1ada7;
+  letter-spacing: 1px;
+}
+header,
+nav,
+aside,
+footer {
+  background-color: rgba(238, 202, 183, 0.4);
+}
 /* 3. Selector d'etiqueta - Estils específics */
-
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+h2 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+h3 {
+  font-size: 1.5rem;
+  font-style: italic;
+}
+p {
+  word-spacing: 2px;
+  text-align: justify;
+}
+a {
+  background-color: #eeeeee;
+  color: #3498db;
+  text-decoration: none;
+  font-weight: bold;
+}
 /* 4. Selector de classe */
 
 /* 5. Selector ID */
