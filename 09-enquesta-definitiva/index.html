@@ -1,22 +1,53 @@
 <!DOCTYPE html>
 <html lang="ca">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="L'enquesta de superherois definitiva">
     <title>L'enquesta definitiva</title>
     <meta name="author" content="Max Martínez">
     <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
-</head>
-<body>
+  </head>
+  <body>
     <header>
-
+      <h1>L'enquesta definitiva de superherois</h1>
+      <ul>
+        <li><a href="../index.html">Tornar a l'Índex principal</a></li>
+      </ul>
     </header>
     <main>
-
+      <form method="post">
+        <fieldset>
+          <legend>Dades Personals</legend>
+          <label>Nom del superheroi</label><br>
+          <input required type="text" minlength="3" maxlength="16"><br><br>
+          <label>Correu de contacte</label><br>
+          <input required type="email"><br><br>
+          <label>Nombre de batalles lluitades</label><br>
+          <input required type="number" min="1" max="999"><br><br>
+          <label>Nivell de poder</label><br>
+          <input required type="number" min="1" max="100"><br><br>
+          <label>Data de la primera aparició</label><br>
+          <input required type="date"><br><br>
+          <label>Hora per a reunions</label><br>
+          <input required type="time"><br><br>
+          <label>Color principal del vestit</label><br>
+          <input required type="color"><br><br>
+          <label>Pàgina web del superheroi</label><br>
+          <input required type="url"><br><br>
+          <label>Telèfon d'emergència</label><br>
+          <input required type="tel">
+        </fieldset>
+        <fieldset>
+          <legend>Dades heroi</legend>
+          <label>Tipus d'heroi</label>
+          <label>Superpoders</label>
+          <label>Univers</label>
+        </fieldset>
+      </form>
     </main>
     <footer>
 
     </footer>
-</body>
+  </body>
 </html>
