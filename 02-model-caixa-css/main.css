@@ -1,0 +1,61 @@
+/* =============================================================================
+   EXERCICI 10: Layout de Targetes amb Espaiats Controlats
+   ============================================================================= */
+
+/*
+OBJECTIU: Dominar l'espaiament amb margin i padding en layouts realistes
+CONCEPTES: Espaiat consistent, jerarquia visual, composició de pàgina
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f5f5f5;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  color: #333333;
+}
+
+/* Contenidor de pàgina - controla l'amplada màxima i centra */
+#pagina {
+  max-width: 900px;
+  margin: 1rem auto; /* Centra horitzontalment */
+  box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Capçalera */
+header {
+}
+
+h1 {
+}
+
+/* Contingut principal */
+main {
+}
+
+/* Secció de projectes */
+h2 {
+}
+
+/* Targeta de projecte */
+.projecte {
+}
+
+h3 {
+}
+
+/* Botó "Veure més" */
+.boto-veure {
+}
+
+/* Peu de pàgina */
+footer {
+}
+
+#boto-unic {
+}
