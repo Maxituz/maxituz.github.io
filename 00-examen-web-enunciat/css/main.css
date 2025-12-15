@@ -1,0 +1,344 @@
+/* ============================================
+RESET I BASE
+============================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #1a202c;
+  line-height: 1.6;
+  background-color: #fef3e2;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+[class^='col-'] {
+  flex: 0 0 auto;
+}
+
+/* Mobile First (Tots els dispositius, principalment smartphones, amb l'amplada menor de 576px)  */
+.col-1 {
+  width: 8.333333%;
+}
+.col-2 {
+  width: 16.666667%;
+}
+.col-3 {
+  width: 25%;
+}
+.col-4 {
+  width: 33.333333%;
+}
+.col-5 {
+  width: 41.666667%;
+}
+.col-6 {
+  width: 50%;
+}
+.col-7 {
+  width: 58.333333%;
+}
+.col-8 {
+  width: 66.666667%;
+}
+.col-9 {
+  width: 75%;
+}
+.col-10 {
+  width: 83.333333%;
+}
+.col-11 {
+  width: 91.666667%;
+}
+.col-12 {
+  width: 100%;
+}
+
+/* Small ≥576px (Dispositius petits, poden ser smartphones grans o tauletes en portrait majors de 576px i menors de 768px) */
+@media (min-width: 576px) {
+  .col-sm-1 {
+    width: 8.333333%;
+  }
+  .col-sm-2 {
+    width: 16.666667%;
+  }
+  .col-sm-3 {
+    width: 25%;
+  }
+  .col-sm-4 {
+    width: 33.333333%;
+  }
+  .col-sm-5 {
+    width: 41.666667%;
+  }
+  .col-sm-6 {
+    width: 50%;
+  }
+  .col-sm-7 {
+    width: 58.333333%;
+  }
+  .col-sm-8 {
+    width: 66.666667%;
+  }
+  .col-sm-9 {
+    width: 75%;
+  }
+  .col-sm-10 {
+    width: 83.333333%;
+  }
+  .col-sm-11 {
+    width: 91.666667%;
+  }
+  .col-sm-12 {
+    width: 100%;
+  }
+}
+
+/* Medium ≥768px (Dispositius mitjans, poden ser tablets en landscape o netbooks majors de 768px i menors de 992px) */
+@media (min-width: 768px) {
+  .col-md-1 {
+    width: 8.333333%;
+  }
+  .col-md-2 {
+    width: 16.666667%;
+  }
+  .col-md-3 {
+    width: 25%;
+  }
+  .col-md-4 {
+    width: 33.333333%;
+  }
+  .col-md-5 {
+    width: 41.666667%;
+  }
+  .col-md-6 {
+    width: 50%;
+  }
+  .col-md-7 {
+    width: 58.333333%;
+  }
+  .col-md-8 {
+    width: 66.666667%;
+  }
+  .col-md-9 {
+    width: 75%;
+  }
+  .col-md-10 {
+    width: 83.333333%;
+  }
+  .col-md-11 {
+    width: 91.666667%;
+  }
+  .col-md-12 {
+    width: 100%;
+  }
+}
+
+/* Large ≥992px (Dispositius grans, ordinadors portàtils o de sobretaula amb pantalles més grans de 992px i menors a 1200px) */
+@media (min-width: 992px) {
+  .col-lg-1 {
+    width: 8.333333%;
+  }
+  .col-lg-2 {
+    width: 16.666667%;
+  }
+  .col-lg-3 {
+    width: 25%;
+  }
+  .col-lg-4 {
+    width: 33.333333%;
+  }
+  .col-lg-5 {
+    width: 41.666667%;
+  }
+  .col-lg-6 {
+    width: 50%;
+  }
+  .col-lg-7 {
+    width: 58.333333%;
+  }
+  .col-lg-8 {
+    width: 66.666667%;
+  }
+  .col-lg-9 {
+    width: 75%;
+  }
+  .col-lg-10 {
+    width: 83.333333%;
+  }
+  .col-lg-11 {
+    width: 91.666667%;
+  }
+  .col-lg-12 {
+    width: 100%;
+  }
+}
+
+/* Extra Large ≥1200px (Dispositius molt grans, ordinadors portàtils i de sobretaula amb pantalles més grans de 1200) */
+@media (min-width: 1200px) {
+  .col-xl-1 {
+    width: 8.333333%;
+  }
+  .col-xl-2 {
+    width: 16.666667%;
+  }
+  .col-xl-3 {
+    width: 25%;
+  }
+  .col-xl-4 {
+    width: 33.333333%;
+  }
+  .col-xl-5 {
+    width: 41.666667%;
+  }
+  .col-xl-6 {
+    width: 50%;
+  }
+  .col-xl-7 {
+    width: 58.333333%;
+  }
+  .col-xl-8 {
+    width: 66.666667%;
+  }
+  .col-xl-9 {
+    width: 75%;
+  }
+  .col-xl-10 {
+    width: 83.333333%;
+  }
+  .col-xl-11 {
+    width: 91.666667%;
+  }
+  .col-xl-12 {
+    width: 100%;
+  }
+}
+li:hover {
+  transform: translateY(-5px);
+  /* He reduit els pixels del translate ja que els 10 pixels els trobava excessius */
+  border-color: #ffd700;
+  transition: 1s;
+}
+section {
+  text-align: center;
+  justify-content: center;
+}
+.destacats button {
+  background-image: linear-gradient(90deg, #ff6347, #dc143c);
+}
+.series button {
+  background-image: linear-gradient(90deg, #1e90ff, #4169e1);
+}
+button {
+  border: none;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  color: white;
+  width: 100%;
+  font-weight: bold;
+}
+button:hover {
+  transform: scale(0.9) rotate(1deg);
+  /* Aqui també he reduit els graus de la rotació ja que 5 eren masses */
+  transition: 1s;
+}
+div {
+  padding: 1rem;
+}
+.apartat {
+  line-height: 1.9;
+  border-radius: 0.5rem;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+}
+.apartat h3 {
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+}
+div img {
+  border-radius: 1rem;
+  width: 100%;
+}
+footer {
+  text-align: center;
+  justify-content: center;
+  background-image: linear-gradient(90deg, #ff8c00, #ff6347);
+  color: white;
+}
+article {
+  padding: 0.5rem;
+}
+article div:hover {
+  transform: translateY(-10px) scale(1.05);
+  border-color: #ff8c00;
+  transition: 1s;
+}
+footer h2 {
+  color: white;
+}
+footer p {
+  padding: 1rem;
+  font-size: 0.75rem;
+}
+header {
+  position: fixed;
+  margin: auto;
+  width: 100%;
+  align-items: center;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(90deg, #ff8c00, #ff6347);
+  padding: 1rem;
+  z-index: 2;
+}
+header nav ul {
+  min-height: 30px;
+  list-style: none;
+  gap: 1rem;
+  justify-content: space-around;
+  align-items: center;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+header nav ul li {
+  border: 1px solid white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 1rem;
+  color: white;
+  font-weight: bold;
+}
+.badge {
+  background-image: linear-gradient(90deg, #ff8c00, #ffd700);
+  font-weight: bold;
+  color: white;
+  width: fit-content;
+  margin: auto;
+  margin-top: 1rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 5rem;
+}
+h2 {
+  color: black;
+  font-size: 3rem;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+}
+section > p {
+  font-size: 1.25rem;
+  padding-bottom: 2rem;
+}
