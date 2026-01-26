@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Courier New', monospace;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.container {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  max-width: 600px;
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.instruccions {
+  text-align: center;
+  color: #666;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+#inventari {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.item {
+  background: linear-gradient(145deg, #8b7355, #a0826d);
+  border: 3px solid #5c4033;
+  padding: 1.5rem;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s;
+}
+
+.item:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.checklist {
+  background-color: #f0f0f0;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border-left: 4px solid #667eea;
+}
+
+.checklist h3 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.checklist ul {
+  list-style: none;
+}
+
+.checklist li {
+  padding: 0.5rem 0;
+  color: #555;
+  font-size: 0.95rem;
+}

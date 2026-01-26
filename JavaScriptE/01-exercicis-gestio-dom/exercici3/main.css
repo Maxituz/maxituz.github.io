@@ -1,0 +1,200 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.container {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  max-width: 600px;
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.instruccions {
+  text-align: center;
+  color: #666;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+.ranking-card {
+  background: linear-gradient(145deg, #2c3e50, #34495e);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.ranking-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.ranking-header h2 {
+  color: #f39c12;
+  font-size: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.servidor {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ecf0f1;
+  padding: 0.3rem 0.8rem;
+  border-radius: 1rem;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+#ranking {
+  min-height: 200px;
+}
+
+.empty {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-style: italic;
+  padding: 3rem 1rem;
+}
+
+#ranking ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#ranking li {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  padding: 1rem 1.5rem;
+  margin-bottom: 0.8rem;
+  border-radius: 0.5rem;
+  color: white;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+  border-left: 4px solid transparent;
+}
+
+#ranking li:hover {
+  transform: translateX(5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#ranking li:nth-child(1) {
+  border-left-color: #f39c12;
+  background: linear-gradient(90deg, rgba(243, 156, 18, 0.3), rgba(243, 156, 18, 0.1));
+}
+
+#ranking li:nth-child(1) .posicio {
+  color: #f39c12;
+}
+
+#ranking li:nth-child(2) {
+  border-left-color: #95a5a6;
+  background: linear-gradient(90deg, rgba(149, 165, 166, 0.3), rgba(149, 165, 166, 0.1));
+}
+
+#ranking li:nth-child(2) .posicio {
+  color: #95a5a6;
+}
+
+#ranking li:nth-child(3) {
+  border-left-color: #cd7f32;
+  background: linear-gradient(90deg, rgba(205, 127, 50, 0.3), rgba(205, 127, 50, 0.1));
+}
+
+#ranking li:nth-child(3) .posicio {
+  color: #cd7f32;
+}
+
+.posicio {
+  font-size: 1.5rem;
+  font-weight: bold;
+  min-width: 30px;
+}
+
+.jugador-nom {
+  flex: 1;
+  font-weight: bold;
+}
+
+.punts {
+  color: #3498db;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.info-box {
+  background-color: #fff3cd;
+  border-left: 4px solid #ffc107;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.info-box h3 {
+  color: #856404;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.info-box p {
+  color: #856404;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.info-box p:last-child {
+  margin-bottom: 0;
+}
+
+.checklist {
+  background-color: #f0f0f0;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border-left: 4px solid #667eea;
+}
+
+.checklist h3 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.checklist ul {
+  list-style: none;
+}
+
+.checklist li {
+  padding: 0.5rem 0;
+  color: #555;
+  font-size: 0.95rem;
+}

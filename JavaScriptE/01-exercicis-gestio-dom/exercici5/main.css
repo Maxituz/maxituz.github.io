@@ -1,0 +1,277 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.container {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  max-width: 700px;
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.instruccions {
+  text-align: center;
+  color: #666;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+.game-panel {
+  background: linear-gradient(145deg, #2c3e50, #34495e);
+  padding: 2rem;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.jugador-info {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(145deg, #ffffff, #e0e0e0);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.avatar img {
+  width: 90px;
+  height: 90px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.info {
+  flex: 1;
+}
+
+.nom-jugador {
+  color: #f39c12;
+  font-size: 1.8rem;
+  margin-bottom: 0.3rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.nivell {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+}
+
+.tipus {
+  margin-top: 0.3rem;
+  color: rgba(255, 164, 8, 0.5);
+  font-size: 0.95rem;
+}
+
+.vida-container {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.vida-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.vida-header h3 {
+  color: white;
+  font-size: 1.2rem;
+}
+
+.vida-max {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.barra-vida-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.barra-vida {
+  flex: 1;
+  height: 2.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.vida {
+  height: 100%;
+  width: 0%;
+  border-radius: 1.25rem;
+  transition:
+    width 0.5s ease,
+    background-color 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.vida-alta {
+  background: linear-gradient(90deg, #27ae60, #2ecc71);
+  box-shadow: 0 0 15px rgba(46, 204, 113, 0.8);
+}
+
+.vida-mitjana {
+  background: linear-gradient(90deg, #f39c12, #f1c40f);
+  box-shadow: 0 0 15px rgba(241, 196, 15, 0.8);
+}
+
+.vida-baixa {
+  background: linear-gradient(90deg, #e67e22, #f39c12);
+  box-shadow: 0 0 15px rgba(230, 126, 34, 0.8);
+}
+
+.vida-critica {
+  background: linear-gradient(90deg, #c0392b, #e74c3c);
+  box-shadow: 0 0 15px rgba(231, 76, 60, 0.8);
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.percentatge {
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  min-width: 50px;
+  text-align: right;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.instruccions-vie h3 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.color-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border-left: 4px solid #ddd;
+}
+
+.color-sample {
+  width: 60px;
+  height: 40px;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.color-item strong {
+  display: block;
+  color: #333;
+  margin-bottom: 0.3rem;
+  font-size: 0.95rem;
+}
+
+.color-item p {
+  color: #666;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.checklist {
+  background-color: #f0f0f0;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border-left: 4px solid #667eea;
+}
+
+.checklist h3 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.checklist ul {
+  list-style: none;
+  margin-bottom: 1rem;
+}
+
+.checklist li {
+  padding: 0.5rem 0;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.consell {
+  background-color: #fff3cd;
+  border-left: 4px solid #ffc107;
+  padding: 1rem;
+  border-radius: 0.3rem;
+  margin-top: 1rem;
+}
+
+.consell strong {
+  color: #856404;
+}
+
+.consell code {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.2rem;
+  font-family: 'Courier New', monospace;
+  color: #856404;
+}
+
+.consell {
+  color: #856404;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}

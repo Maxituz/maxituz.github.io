@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercici 5 - Barra de Vida Dinàmica</title>
+    <link rel="stylesheet" href="./main.css">
+    <script type="module" src="./main.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Sistema de Vida del Jugador</h1>
+      <p class="instruccions">Completa les tasques del fitxer <strong>main.js</strong> per canviar
+        els colors de la barra de vida segons els punts!</p>
+
+      <div class="game-panel">
+        <div class="jugador-info">
+          <div class="avatar">
+            <img src="./img/luffy.webp" alt="Luffy">
+          </div>
+          <div class="info">
+            <h2 class="nom-jugador">Monkey D. Luffy</h2>
+            <p class="nivell">Nivell: Gear 5</p>
+            <p class="tipus">Tipus: Gomu Gomu</p>
+          </div>
+        </div>
+
+        <div class="vida-container">
+          <div class="vida-header">
+            <h3 id="punts-vida">??? - 0 HP</h3>
+            <span class="vida-max">/ 100 HP</span>
+          </div>
+          <div class="barra-vida-container">
+            <div class="barra-vida">
+              <div class="vida"></div>
+            </div>
+            <div class="percentatge" id="percentatge">0%</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="instruccions-vie">
+        <h3>🎨 Colors de la Barra segons la Vida:</h3>
+        <div class="color-grid">
+          <div class="color-item">
+            <div class="color-sample vida-alta"></div>
+            <div>
+              <strong>💚 Vida Alta</strong>
+              <p>51-100 HP • Color verd</p>
+            </div>
+          </div>
+          <div class="color-item">
+            <div class="color-sample vida-mitjana"></div>
+            <div>
+              <strong>💛 Vida Mitjana</strong>
+              <p>31-50 HP • Color groc</p>
+            </div>
+          </div>
+          <div class="color-item">
+            <div class="color-sample vida-baixa"></div>
+            <div>
+              <strong>🧡 Vida Baixa</strong>
+              <p>11-30 HP • Color taronja</p>
+            </div>
+          </div>
+          <div class="color-item">
+            <div class="color-sample vida-critica"></div>
+            <div>
+              <strong>❤️ Vida Crítica</strong>
+              <p>0-10 HP • Color vermell</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="checklist">
+        <h3>✅ Checklist de Tasques:</h3>
+        <ul>
+          <li>[ ] Eliminar totes les classes de la barra</li>
+          <li>[ ] Crea estructures if/else per comprovar la vida</li>
+          <li>[ ] Afegir la classe correcta segons la vida</li>
+          <li>[ ] Actualitzar l'amplada de la barra amb width</li>
+          <li>[ ] Actualitzar el text dels punts de vida</li>
+          <li>[ ] Actualitzar el percentatge visual</li>
+          <li>[ ] Experimenta: Provar amb diferents valors de vida!</li>
+        </ul>
+        <div class="consell">
+          💡 <strong>Experimenta:</strong> Canvia el valor de la variable <code>hp</code> al
+          principi
+          del main.js i prova amb diferents valors (0, 10, 30, 50, 75, 100) per veure els
+          diferents colors!
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

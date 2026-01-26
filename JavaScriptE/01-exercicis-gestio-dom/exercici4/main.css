@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.container {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  max-width: 700px;
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.instruccions {
+  text-align: center;
+  color: #666;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+.game-screen {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  padding: 3rem;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+  box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.personatge {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  width: 250px;
+}
+
+.nom-personatge {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.personatge img {
+  width: 100%;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.estat {
+  background-color: #f0f0f0;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.modes-info {
+  margin-bottom: 2rem;
+}
+
+h3 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.modes-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.mode-card {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border-left: 4px solid;
+}
+
+.mode-card.gold {
+  background-color: #fff9e6;
+  border-left-color: #f39c12;
+}
+
+.mode-card.red {
+  background-color: #ffe6e6;
+  border-left-color: #e74c3c;
+}
+
+.mode-card.ghost {
+  background-color: #f0f0f0;
+  border-left-color: #95a5a6;
+}
+
+.mode-card.frozen {
+  background-color: #e6f7ff;
+  border-left-color: #3498db;
+}
+
+.mode-card h4 {
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.mode-card p {
+  color: #666;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.checklist {
+  background-color: #f0f0f0;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border-left: 4px solid #667eea;
+}
+
+.checklist h3 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.checklist ul {
+  list-style: none;
+}
+
+.checklist li {
+  padding: 0.5rem 0;
+  color: #555;
+  font-size: 0.95rem;
+}

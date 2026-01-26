@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercici 6 - Galeria de Personatges</title>
+    <link rel="stylesheet" href="./main.css">
+    <script type="module" src="./main.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Galeria de Personatges Llegendaris</h1>
+      <p class="instruccions">Completa les tasques del fitxer <strong>main.js</strong> per
+        modificar els atributs dels personatges!</p>
+
+      <div class="galeria">
+        <!-- Personatge 1: Link -->
+        <div class="personatge-card" id="link-card">
+          <div class="badge">Zelda</div>
+          <img id="link-img" src="./img/link.webp" alt="Link normal" title="Link - Heroi de Hyrule">
+          <h3 id="link-nom">Link</h3>
+          <p class="estat">Mode: Normal</p>
+          <button id="btn-link" class="btn-transformar" disabled>🗡️ Transformar</button>
+        </div>
+
+        <!-- Personatge 2: Mario -->
+        <div class="personatge-card" id="mario-card">
+          <div class="badge">Mario Bros</div>
+          <img id="mario-img" src="./img/mario-normal.webp" alt="Mario normal"
+            title="Mario - Lampista Heroic">
+          <h3 id="mario-nom">Mario</h3>
+          <p class="estat">Mode: Normal</p>
+          <button id="btn-mario" class="btn-transformar" disabled>🔥 Transformar</button>
+        </div>
+
+        <!-- Personatge 3: Sonic -->
+        <div class="personatge-card" id="sonic-card">
+          <div class="badge">Sonic</div>
+          <img id="sonic-img" src="./img/sonic.webp" alt="Sonic normal"
+            title="Sonic - L'eriçó més ràpid">
+          <h3 id="sonic-nom">Sonic</h3>
+          <p class="estat">Mode: Normal</p>
+          <button id="btn-sonic" class="btn-transformar" disabled>⚡ Transformar</button>
+        </div>
+      </div>
+
+      <div class="info-atributs">
+        <h3>📚 Atributs HTML que modificarem:</h3>
+        <div class="atribut-grid">
+          <div class="atribut-item">
+            <strong>src</strong>
+            <p>Canvia la imatge del personatge</p>
+          </div>
+          <div class="atribut-item">
+            <strong>alt</strong>
+            <p>Descripció alternativa de la imatge</p>
+          </div>
+          <div class="atribut-item">
+            <strong>title</strong>
+            <p>Text que apareix en passar el ratolí</p>
+          </div>
+          <div class="atribut-item">
+            <strong>disabled</strong>
+            <p>Desactiva/activa els botons</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="checklist">
+        <h3>✅ Checklist de Tasques:</h3>
+        <ul>
+          <li>[ ] LINK: Canviar imatge a versió Master Sword</li>
+          <li>[ ] LINK: Actualitzar atribut alt</li>
+          <li>[ ] LINK: Actualitzar atribut title</li>
+          <li>[ ] LINK: Activar botó (eliminar disabled)</li>
+          <li>[ ] MARIO: Canviar imatge a versió Fire Mario</li>
+          <li>[ ] MARIO: Actualitzar atributs alt i title</li>
+          <li>[ ] MARIO: Activar botó</li>
+          <li>[ ] SONIC: Canviar imatge a versió Super Sonic</li>
+          <li>[ ] SONIC: Actualitzar atributs alt i title</li>
+          <li>[ ] SONIC: Activar botó</li>
+          <li>[ ] Personalitzar noms i modes (LINK, MARIO i SONIC)</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

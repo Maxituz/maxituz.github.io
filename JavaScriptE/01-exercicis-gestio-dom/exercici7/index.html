@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercici 7 - Clash of Clans: Camp de Batalla</title>
+    <link rel="stylesheet" href="./main.css">
+    <script type="module" src="./main.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>⚔️ CLASH OF CLANS: CAMP DE BATALLA</h1>
+        <p class="instruccions">Completa les tasques del fitxer <strong>main.js</strong> per
+          desplegar les teves tropes i generar enemics!</p>
+      </div>
+
+      <!-- Estadístiques -->
+      <div class="stats-bar">
+        <div class="stat-item">
+          <div class="stat-label">🛡️ TROPES ALIADES</div>
+          <div class="stat-value blue" id="contador-aliats">0</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">⚔️ TROPES ENEMIGUES</div>
+          <div class="stat-value red" id="contador-enemics">0</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">👥 TOTAL TROPES</div>
+          <div class="stat-value yellow">0</div>
+        </div>
+      </div>
+
+      <!-- Camp de Batalla -->
+      <div class="battlefield-container">
+        <!-- Zona Aliada -->
+        <div class="zona-aliada">
+          <div class="tropes-grid" id="zona-aliada">
+            <div class="empty-message">
+              <p>⚠️ No tens tropes desplegades!</p>
+              <p>Completa les tasques per cridar
+                reforços...</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Zona Enemiga -->
+        <div class="zona-enemiga">
+          <div class="tropes-grid" id="zona-enemiga">
+            <div class="empty-message">
+              <p>⚠️ Encara no hi ha enemics!</p>
+              <p>Genera enemics amb createElement...
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Guia de Tropes -->
+      <div class="tropes-guide">
+        <h3>👥 TROPES DISPONIBLES</h3>
+        <div class="guide-grid">
+          <div class="guide-item">
+            <div class="guide-icon"><img src="./img/barbarian.webp" alt="Bàrbar"></div>
+            <div class="guide-name">Bàrbar</div>
+            <div class="guide-stats">❤️ 78 • ⚔️ 16</div>
+            <div class="guide-team ally">ALIAT</div>
+          </div>
+          <div class="guide-item">
+            <div class="guide-icon"><img src="./img/archer.webp" alt="Arquera"></div>
+            <div class="guide-name">Arquera</div>
+            <div class="guide-stats">❤️ 40 • ⚔️ 12</div>
+            <div class="guide-team ally">ALIAT</div>
+          </div>
+          <div class="guide-item">
+            <div class="guide-icon"><img src="./img/giant.webp" alt="Gegant"></div>
+            <div class="guide-name">Gegant</div>
+            <div class="guide-stats">❤️ 380 • ⚔️ 25</div>
+            <div class="guide-team ally">ALIAT</div>
+          </div>
+          <div class="guide-item">
+            <div class="guide-icon"><img src="./img/king-barbarian.webp" alt="Rei Bàrbar"></div>
+            <div class="guide-name">Rei Bàrbar</div>
+            <div class="guide-stats">❤️ 2500 • ⚔️ 480</div>
+            <div class="guide-team ally">ALIAT</div>
+          </div>
+          <div class="guide-item">
+            <div class="guide-icon"><img src="./img/goblin.webp" alt="Goblin"></div>
+            <div class="guide-name">Goblin</div>
+            <div class="guide-stats">❤️ 32 • ⚔️ 19</div>
+            <div class="guide-team enemy">ENEMIC</div>
+          </div>
+          <div class="guide-item">
+            <div class="guide-icon"><img src="./img/skeleton.webp" alt="Esquelet"></div>
+            <div class="guide-name">Esquelet</div>
+            <div class="guide-stats">❤️ 35 • ⚔️ 25</div>
+            <div class="guide-team enemy">ENEMIC</div>
+          </div>
+          <div class="guide-item">
+            <div class="guide-icon"><img src="./img/dragon.webp" alt="Drac"></div>
+            <div class="guide-name">Drac</div>
+            <div class="guide-stats">❤️ 1900 • ⚔️ 240</div>
+            <div class="guide-team enemy">ENEMIC</div>
+          </div>
+          <div class="guide-item">
+            <div class="guide-icon"><img src="./img/pekka.webp" alt="P.E.K.K.A"></div>
+            <div class="guide-name">P.E.K.K.A</div>
+            <div class="guide-stats">❤️ 2900 • ⚔️ 510</div>
+            <div class="guide-team enemy">ENEMIC</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Checklist -->
+      <div class="checklist">
+        <h3>✅ Checklist de Tasques:</h3>
+        <ul>
+          <li>[ ] Crear primer aliat (Bàrbar) amb createElement</li>
+          <li>[ ] Crear els elements de nom i stats del Bàrbar</li>
+          <li>[ ] Afegir el nom i stats a l'element Bàrbar amb append()</li>
+          <li>[ ] Afegir classes CSS 'tropa' i 'barbarian'</li>
+          <li>[ ] Afegir el Bàrbar a la zona aliada amb append()</li>
+          <li>[ ] Crear segon aliat (Arquera)</li>
+          <li>[ ] Crear tercer aliat (Gegant)</li>
+          <li>[ ] Crear primer enemic (Goblin)</li>
+          <li>[ ] Afegir el Goblin a la zona enemiga</li>
+          <li>[ ] Crear més enemics (Esquelet, Drac, P.E.K.K.A)</li>
+          <li>[ ] Actualitzar comptadors correctament</li>
+          <li>[ ] EXTRA: Eliminar missatges "empty-message"</li>
+          <li>[ ] EXTRA: Eliminar tropes amb remove()</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
