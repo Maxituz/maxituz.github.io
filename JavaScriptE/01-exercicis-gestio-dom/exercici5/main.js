@@ -22,7 +22,7 @@
 
 // VARIABLE DE VIDA (Canvia aquest valor per fer proves)
 // Prova amb: 100, 75, 50, 30, 10, 5, 0
-let hp = 9;
+let hp = 10;
 
 // 📦 Seleccionar els elements necessaris
 const puntsVida = document.querySelector('#punts-vida');
@@ -33,7 +33,7 @@ const percentatge = document.querySelector('#percentatge');
 // TASCA 1: Eliminar TOTES les classes possibles CSS de la barraVida
 // ============================================
 // 'vida-alta', 'vida-mitjana', 'vida-baixa', 'vida-critica'
-
+barraVida.classList.remove('vida-alta', 'vida-mitjana', 'vida-baixa', 'vida-critica');
 // ============================================
 // TASCA 2: Afegir la classe CSS correcta segons el valor de la vida
 // ============================================
@@ -41,22 +41,30 @@ const percentatge = document.querySelector('#percentatge');
 // Si hp està entre 31-50 → afegeix 'vida-mitjana'
 // Si hp està entre 11-30 → afegeix 'vida-baixa'
 // Si hp està entre 0-10 → afegeix 'vida-critica'
-
+if ((hp > 50) & (hp <= 100)) {
+  barraVida.classList.add('vida-alta');
+} else if ((hp > 30) & (hp <= 50)) {
+  barraVida.classList.add('vida-mitjana');
+} else if ((hp > 10) & (hp <= 30)) {
+  barraVida.classList.add('vida-baixa');
+} else {
+  barraVida.classList.add('vida-critica');
+}
 // ============================================
 // TASCA 3: Actualitzar l'amplada de la barra
 // ============================================
 // La barra ha de tenir una amplada (width) igual al % de vida.
-
+barraVida.style.setProperty('width', `${hp}%`);
 // ============================================
 // TASCA 4: Actualitzar el text dels punts de vida
 // ============================================
 // El text ha de mostrar: "Punts de Vida - XX HP"
-
+puntsVida.textContent = `Punts de Vida - ${hp} HP`;
 // ============================================
 // TASCA 5: Actualitzar el percentatge visual
 // ============================================
 // El percentatge ha de mostrar: "XX%"
-
+percentatge.textContent = `${hp}%`;
 // ============================================
 // TASCA FINAL: Experimenta!
 // ============================================
