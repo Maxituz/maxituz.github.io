@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercici 3 - Màquina de Loots</title>
+    <link rel="stylesheet" href="./main.css">
+    <script type="module" src="./main.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <div class="header">
+        <h1><img src="./img/cofre-legendari.webp" alt="Logo Màquina de Loots"> MÀQUINA DE LOOTS</h1>
+        <p class="instruccions">Completa les tasques del fitxer <strong>main.js</strong> per obrir
+          cofres i obtenir recompenses!</p>
+      </div>
+
+      <!-- Estadístiques del jugador -->
+      <div class="player-stats">
+        <div class="stat-box">
+          <div class="stat-icon"><img src="./img/cofre-fusta.webp" alt="Cofres oberts"></div>
+          <div class="stat-info">
+            <div class="stat-label">Cofres Oberts</div>
+            <div class="stat-value" id="cofres-oberts">0</div>
+          </div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-icon">⚪</div>
+          <div class="stat-info">
+            <div class="stat-label">Comuns</div>
+            <div class="stat-value" id="comuns">0</div>
+          </div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-icon">🟢</div>
+          <div class="stat-info">
+            <div class="stat-label">Poc Comuns</div>
+            <div class="stat-value" id="poc-comuns">0</div>
+          </div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-icon">🔵</div>
+          <div class="stat-info">
+            <div class="stat-label">Rars</div>
+            <div class="stat-value" id="rars">0</div>
+          </div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-icon">🟣</div>
+          <div class="stat-info">
+            <div class="stat-label">Èpics</div>
+            <div class="stat-value" id="epics">0</div>
+          </div>
+        </div>
+        <div class="stat-box gold">
+          <div class="stat-icon">🟡</div>
+          <div class="stat-info">
+            <div class="stat-label">Llegendaris</div>
+            <div class="stat-value" id="llegendaris">0</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Resultats de l'obertura -->
+      <div class="resultats-section">
+        <h2>Últimes Recompenses Obtingudes</h2>
+        <div class="resultats-grid" id="resultats">
+          <div class="resultats-buit">
+            <p>📭 Encara no has obert cap cofre</p>
+            <p>Completa les tasques per obtenir recompenses!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Estadístiques totals -->
+      <div class="player-stats stadistics">
+        <div class="stat-box">
+          <div class="stat-icon">💰</div>
+          <div class="stat-info">
+            <div class="stat-label">Or Total</div>
+            <div class="stat-value" id="or-total">0</div>
+          </div>
+          <div class="stat-icon">💰</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-icon">🏆</div>
+          <div class="stat-info">
+            <div class="stat-label">Millor Raresa</div>
+            <div class="stat-value" id="millor-raresa">0</div>
+          </div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-icon">💰</div>
+          <div class="stat-info">
+            <div class="stat-label">Cofre amb més Or</div>
+            <div class="stat-value" id="maxim-or">0</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tipus de cofres -->
+      <div class="cofres-section">
+        <h2>Tipus de Cofres</h2>
+        <div class="cofres-grid">
+          <!-- Cofre Bàsic -->
+          <div class="cofre-card basic">
+            <div class="cofre-icon"><img src="./img/cofre-fusta.webp" alt="cofre bàsic"></div>
+            <h3>Cofre Bàsic</h3>
+            <div class="cofre-stats">
+              <div class="probabilitat">⚪ 60% Comú (0-60)</div>
+              <div class="probabilitat">🟢 34% Poc Comú (61-94)</div>
+              <div class="probabilitat">🔵 5% Rar (95-99)</div>
+              <div class="probabilitat">🟣 1% Èpic (100)</div>
+            </div>
+          </div>
+
+          <!-- Cofre de Plata -->
+          <div class="cofre-card silver">
+            <div class="cofre-icon"><img src="./img/cofre-plata.webp" alt="cofre de plata"></div>
+            <h3>Cofre de Plata</h3>
+            <div class="cofre-stats">
+              <div class="probabilitat">🟢 50% Poc Comú (0-50)</div>
+              <div class="probabilitat">🔵 35% Rar (51-85)</div>
+              <div class="probabilitat">🟣 10% Èpic (86-95)</div>
+              <div class="probabilitat">🟡 5% Llegendari (96-100)</div>
+            </div>
+          </div>
+
+          <!-- Cofre d'Or -->
+          <div class="cofre-card gold">
+            <div class="cofre-icon"><img src="./img/cofre-or.webp" alt="cofre d'or"></div>
+            <h3>Cofre d'Or</h3>
+            <div class="cofre-stats">
+              <div class="probabilitat">🔵 40% Rar (0-40)</div>
+              <div class="probabilitat">🟣 40% Èpic (41-80)</div>
+              <div class="probabilitat">🟡 20% Llegendari (81-100)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Taula de rareses -->
+      <div class="rareses-info">
+        <h2>Taula de Recompenses</h2>
+        <div class="rareses-grid">
+          <div class="raresa-card comu">
+            <div class="raresa-header">
+              <span class="raresa-icon">⚪</span>
+              <span class="raresa-nom">COMÚ</span>
+            </div>
+            <div class="raresa-recompensa">💰 50-100 or</div>
+          </div>
+
+          <div class="raresa-card poc-comu">
+            <div class="raresa-header">
+              <span class="raresa-icon">🟢</span>
+              <span class="raresa-nom">POC COMÚ</span>
+            </div>
+            <div class="raresa-recompensa">💰 100-250 or</div>
+          </div>
+
+          <div class="raresa-card rar">
+            <div class="raresa-header">
+              <span class="raresa-icon">🔵</span>
+              <span class="raresa-nom">RAR</span>
+            </div>
+            <div class="raresa-recompensa">💰 250-500 or</div>
+          </div>
+
+          <div class="raresa-card epic">
+            <div class="raresa-header">
+              <span class="raresa-icon">🟣</span>
+              <span class="raresa-nom">ÈPIC</span>
+            </div>
+            <div class="raresa-recompensa">💰 500-1000 or</div>
+          </div>
+
+          <div class="raresa-card llegendari">
+            <div class="raresa-header">
+              <span class="raresa-icon">🟡</span>
+              <span class="raresa-nom">LLEGENDARI</span>
+            </div>
+            <div class="raresa-recompensa">💰 1000-5000 or</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Checklist -->
+      <div class="checklist">
+        <h3>✅ Checklist de Tasques:</h3>
+        <ul>
+          <li>[ ] Generar un número aleatori entre 0 i 100</li>
+          <li>[ ] Determinar la raresa segons el número (if/else)</li>
+          <li>[ ] Incrementar el comptador de la raresa obtinguda</li>
+          <li>[ ] Actualitzar comptadors al DOM</li>
+          <li>[ ] Obrir 3 cofres bàsics (bucle o manual)</li>
+          <li>[ ] Obrir 2 cofres de plata (diferents probabilitats)</li>
+          <li>[ ] Obrir 1 cofre d'or (diferents probabilitats)</li>
+          <li>[ ] Generar recompensa d'or segons raresa</li>
+          <li>[ ] Mostrar resultats visualment al DOM</li>
+          <li>[ ] Calcular estadístiques totals</li>
+          <li>[ ] Calcular or total guanyat</li>
+          <li>[ ] Determinar la millor raresa obtinguda</li>
+          <li>[ ] Mostra el cofre que ha obtingut més or</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

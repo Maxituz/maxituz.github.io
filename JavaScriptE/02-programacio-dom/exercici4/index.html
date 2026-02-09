@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercici 4 - Defensa de la Casa d'en Dave</title>
+    <link rel="stylesheet" href="./main.css">
+    <script type="module" src="./main.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <div class="header">
+        <h1>🛡️ TOWER DEFENSE</h1>
+        <p class="instruccions">Completa les tasques del fitxer <strong>main.js</strong> per
+          defensar la casa dels atacs enemics!</p>
+      </div>
+
+      <!-- Estat de la casa -->
+      <div class="casa-section">
+        <div class="casa-visual">
+          <div class="casa-icon"><img src="./img/casa.webp" alt="Casa Plants vs Zombies"></div>
+          <h2>CASA D'EN DAVE</h2>
+        </div>
+
+        <div class="casa-stats">
+          <div class="stat-casa">
+            <div class="stat-label">❤️ Vida de la casa</div>
+            <div class="barra-vida-casa">
+              <div class="vida-casa-actual" id="barra-vida-casa"></div>
+            </div>
+            <div class="stat-value" id="vida-casa-text">0/0</div>
+          </div>
+
+          <div class="stat-casa">
+            <div class="stat-label">🛡️ Defensa</div>
+            <div class="stat-value" id="defensa-casa">0</div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Onades d'Atac -->
+      <div class="onades-section">
+        <h2>⚔️ Onades d'Atac Enemigues</h2>
+        <div class="onades-grid" id="onades-grid">
+          <div class="onades-placeholder">
+            <p>⏳ Esperant les onades d'atac...</p>
+            <p>Completa les tasques per veure els atacs!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Estat d'Alerta -->
+      <div class="alerta-section">
+        <h2>🚨 Sistema d'Alerta</h2>
+        <div class="alerta-container" id="alerta-container">
+          <div class="alerta-icon">🟢</div>
+          <div class="alerta-info">
+            <div class="alerta-nivel">NORMAL</div>
+            <div class="alerta-missatge">La casa és segura</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Resum Final -->
+      <div class="resum-section">
+        <h2>📊 Resum de la Defensa</h2>
+        <div class="resum-grid">
+          <div class="resum-stat">
+            <div class="resum-icon">⚔️</div>
+            <div class="resum-label">Atacs Rebuts</div>
+            <div class="resum-valor" id="total-atacs">0</div>
+          </div>
+          <div class="resum-stat">
+            <div class="resum-icon">🛡️</div>
+            <div class="resum-label">Atacs Bloquejats</div>
+            <div class="resum-valor" id="atacs-bloquejats">0</div>
+          </div>
+          <div class="resum-stat">
+            <div class="resum-icon">💔</div>
+            <div class="resum-label">Dany Total Rebut</div>
+            <div class="resum-valor" id="dany-total">0</div>
+          </div>
+          <div class="resum-stat">
+            <div class="resum-icon">🏆</div>
+            <div class="resum-label">Estat Final</div>
+            <div class="resum-valor" id="estat-final">---</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Checklist -->
+      <div class="checklist">
+        <h3>✅ Checklist de Tasques:</h3>
+        <ul>
+          <li>[ ] Establir vida i defensa de la casa</li>
+          <li>[ ] Actualitzar stats de la casa al DOM</li>
+          <li>[ ] Processar Onada 1: Zombies Caracubo (dany baix)</li>
+          <li>[ ] Calcular dany rebut amb if/else</li>
+          <li>[ ] Actualitzar vida de la casa</li>
+          <li>[ ] Actualitzar la barra de vida visualment</li>
+          <li>[ ] Determinar nivell d'alerta (Normal/Alerta/Crític)</li>
+          <li>[ ] Processar Onada 2: Zombies Pirates (dany mitjà)</li>
+          <li>[ ] Processar Onada 3: Zombies Cowboys (dany alt)</li>
+          <li>[ ] Processar Onada 4: Dr. Zombi Boss (dany massiu)</li>
+          <li>[ ] Calcular resum final de la defensa</li>
+          <li>[ ] Determinar si la casa sobreviu (estatFinal)</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

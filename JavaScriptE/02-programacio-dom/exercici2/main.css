@@ -1,0 +1,423 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #434343 0%, #000000 100%);
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+  color: white;
+  font-size: 2.5rem;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+  margin-bottom: 0.5rem;
+}
+
+.instruccions {
+  color: white;
+  font-size: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.instruccions strong {
+  color: #ffd700;
+}
+
+/* Arena de Combat */
+.arena {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+/* Combatents */
+.combatent {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.combatent.jugador {
+  border: 4px solid #3498db;
+}
+
+.combatent.enemic {
+  border: 4px solid #e74c3c;
+}
+
+.combatent-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.combatent-header h2 {
+  font-size: 1.5rem;
+  color: #2c3e50;
+}
+
+.nivell {
+  background: #f39c12;
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 1rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.avatar {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.avatar img {
+  width: 150px;
+  height: 150px;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+/* Stats */
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ecf0f1;
+  padding: 0.8rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.stat-label {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.stat-value {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #27ae60;
+}
+
+/* Vida */
+.vida-container {
+  margin-top: 1rem;
+}
+
+.vida-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.barra-vida {
+  height: 30px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.vida-actual {
+  width: 0%;
+  height: 100%;
+  transition: width 2s ease;
+  border-radius: 15px;
+}
+
+.vida-actual.jugador {
+  background: linear-gradient(90deg, #27ae60, #2ecc71);
+  box-shadow: 0 0 10px rgba(46, 204, 113, 0.8);
+}
+
+.vida-actual.enemic {
+  background: linear-gradient(90deg, #e74c3c, #c0392b);
+  box-shadow: 0 0 10px rgba(231, 76, 60, 0.8);
+}
+
+/* VS Divider */
+.vs-divider {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vs-text {
+  max-width: 12rem;
+  background: linear-gradient(135deg, #f39c12, #e67e22);
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  padding: 1rem 2rem;
+  border-radius: 50%;
+  box-shadow: 0 8px 20px rgba(243, 156, 18, 0.5);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.vs-lightning {
+  font-size: 2rem;
+  margin-top: 1rem;
+  animation: flicker 1.5s infinite;
+}
+
+@keyframes flicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Càlculs */
+.calculs {
+  padding: 2rem;
+  background: #ecf0f1;
+}
+
+.calculs h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.calculs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.calcul-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 0.8rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.calcul-card.jugador-card {
+  border-left: 5px solid #3498db;
+}
+
+.calcul-card.enemic-card {
+  border-left: 5px solid #e74c3c;
+}
+
+.calcul-card h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.calcul-resultat {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+.calcul-resultat:last-child {
+  border-bottom: none;
+}
+
+.calcul-label {
+  color: #7f8c8d;
+}
+
+.calcul-valor {
+  font-weight: bold;
+  color: #2c3e50;
+  font-size: 1.1rem;
+}
+
+.calcul-valor.destacat {
+  color: #e74c3c;
+  font-size: 1.3rem;
+}
+
+/* Prediccions */
+.prediccions {
+  padding: 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.prediccions h2 {
+  text-align: center;
+  color: white;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.prediccions-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.prediccio {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1.5rem;
+  border-radius: 0.8rem;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.prediccio-icon {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.prediccio-label {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.prediccio-valor {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+/* Simulació */
+.simulacio {
+  padding: 2rem;
+}
+
+.simulacio h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.simulacio-log {
+  background: #2c3e50;
+  color: #ecf0f1;
+  padding: 1.5rem;
+  border-radius: 0.8rem;
+  font-family: 'Courier New', monospace;
+  min-height: 200px;
+  max-height: 400px;
+  overflow-y: auto;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.log-buit {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-style: italic;
+  padding: 3rem;
+}
+
+.log-linia {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  border-left: 3px solid #3498db;
+  padding-left: 1rem;
+}
+
+.log-linia.enemic {
+  border-left-color: #e74c3c;
+}
+
+.log-linia.info {
+  border-left-color: #f39c12;
+  background: rgba(243, 156, 18, 0.1);
+}
+
+.log-linia.crític {
+  border-left-color: #e74c3c;
+  background: rgba(231, 76, 60, 0.2);
+  font-weight: bold;
+}
+
+/* Checklist */
+.checklist {
+  background: #f0f0f0;
+  padding: 2rem;
+  border-left: 5px solid #e74c3c;
+}
+
+.checklist h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.checklist ul {
+  list-style: none;
+}
+
+.checklist li {
+  padding: 0.5rem 0;
+  color: #555;
+  font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .arena {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .vs-divider {
+    order: 0;
+  }
+
+  .calculs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .prediccions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

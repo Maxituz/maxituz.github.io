@@ -1,0 +1,453 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+  color: white;
+  font-size: 2.5rem;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+  margin-bottom: 0.5rem;
+}
+
+.header h1 img {
+  width: 60px;
+  vertical-align: middle;
+}
+
+.instruccions {
+  color: white;
+  font-size: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.instruccions strong {
+  color: #ffd700;
+}
+
+/* Stats del jugador */
+.player-stats {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+}
+
+.stat-box {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1rem;
+  border-radius: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+}
+
+.stat-box:hover {
+  transform: translateY(-3px);
+}
+
+.stat-box.gold {
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+  animation: shine 2s infinite;
+}
+
+@keyframes shine {
+  0%,
+  100% {
+    box-shadow: 0 4px 10px rgba(255, 215, 0, 0.5);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(255, 215, 0, 0.8);
+  }
+}
+
+.stat-icon {
+  font-size: 2rem;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.stat-icon img {
+  width: 40px;
+  object-fit: contain;
+  vertical-align: bottom;
+}
+
+.stat-info {
+  flex: 1;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: #7f8c8d;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+/*Estadístiques del jugador*/
+.stadistics {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Cofres */
+.cofres-section {
+  padding: 2rem 1.5rem;
+  background: #ecf0f1;
+}
+
+.cofres-section h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.cofres-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.cofre-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: 4px solid;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+
+.cofre-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cofre-card.basic {
+  border-color: #95a5a6;
+}
+
+.cofre-card.silver {
+  border-color: #bdc3c7;
+}
+
+.cofre-card.gold {
+  border-color: #f39c12;
+  background: linear-gradient(145deg, #fff9e6, white);
+}
+
+.cofre-icon {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.cofre-icon img {
+  width: 120px;
+  object-fit: contain;
+}
+
+.cofre-card h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.cofre-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.probabilitat {
+  background: #ecf0f1;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  color: #2c3e50;
+}
+
+/* Resultats */
+.resultats-section {
+  padding: 2rem 1.5rem;
+}
+
+.resultats-section h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.resultats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  min-height: 200px;
+}
+
+.resultats-buit {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.resultats-buit p {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.loot-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 0.8rem;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: 3px solid;
+  animation: apareixerLoot 0.5s ease;
+}
+
+@keyframes apareixerLoot {
+  from {
+    opacity: 0;
+    transform: scale(0.5) rotate(-10deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.loot-card.comú {
+  border-color: #95a5a6;
+  background: linear-gradient(145deg, #f8f9fa, white);
+}
+
+.loot-card.poc-comú {
+  border-color: #27ae60;
+  background: linear-gradient(145deg, #e8f8f5, white);
+}
+
+.loot-card.rar {
+  border-color: #3498db;
+  background: linear-gradient(145deg, #ebf5fb, white);
+}
+
+.loot-card.èpic {
+  border-color: #9b59b6;
+  background: linear-gradient(145deg, #f4ecf7, white);
+}
+
+.loot-card.llegendari {
+  border-color: #f39c12;
+  background: linear-gradient(145deg, #fef5e7, white);
+  animation:
+    apareixerLoot 0.5s ease,
+    brillar 2s infinite;
+}
+
+@keyframes brillar {
+  0%,
+  100% {
+    box-shadow: 0 4px 10px rgba(243, 156, 18, 0.5);
+  }
+  50% {
+    box-shadow: 0 6px 20px rgba(243, 156, 18, 0.8);
+  }
+}
+
+.loot-icon {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.loot-nom {
+  font-weight: bold;
+  color: #2c3e50;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.loot-img img {
+  width: 80px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+
+.loot-raresa {
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.loot-or {
+  font-size: 1.2rem;
+  color: #f39c12;
+  font-weight: bold;
+}
+
+/* Rareses Info */
+.rareses-info {
+  padding: 2rem 1.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.rareses-info h2 {
+  text-align: center;
+  color: white;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.rareses-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+
+.raresa-card {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1.5rem;
+  border-radius: 0.8rem;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border-top: 5px solid;
+}
+
+.raresa-card.comu {
+  border-top-color: #95a5a6;
+}
+
+.raresa-card.poc-comu {
+  border-top-color: #27ae60;
+}
+
+.raresa-card.rar {
+  border-top-color: #3498db;
+}
+
+.raresa-card.epic {
+  border-top-color: #9b59b6;
+}
+
+.raresa-card.llegendari {
+  border-top-color: #f39c12;
+}
+
+.raresa-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.raresa-icon {
+  font-size: 2rem;
+}
+
+.raresa-nom {
+  font-weight: bold;
+  color: #2c3e50;
+  font-size: 1rem;
+}
+
+.raresa-prob {
+  color: #7f8c8d;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.raresa-recompensa {
+  color: #f39c12;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* Checklist */
+.checklist {
+  background: #f0f0f0;
+  padding: 2rem 1.5rem;
+  border-left: 5px solid #667eea;
+}
+
+.checklist h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.checklist ul {
+  list-style: none;
+}
+
+.checklist li {
+  padding: 0.5rem 0;
+  color: #555;
+  font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .player-stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .cofres-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rareses-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .player-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .rareses-grid {
+    grid-template-columns: 1fr;
+  }
+}
