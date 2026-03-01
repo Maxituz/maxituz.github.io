@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercici 5 - Selector de Personatge</title>
+    <link rel="stylesheet" href="./main.css">
+    <script type="module" src="./main.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <div class="header">
+        <h1>⚔️ SELECTOR DE PERSONATGE ⚔️</h1>
+        <p class="instruccions">Completa les tasques del fitxer <strong>main.js</strong> per
+          analitzar quina és el millor personatge per cada estil de joc!</p>
+      </div>
+
+      <!-- Classes Disponibles -->
+      <div class="classes-section">
+        <h2>Personatges Disponibles</h2>
+        <div class="classes-grid">
+          <!-- Guerrer -->
+          <div class="classe-card guerrer">
+            <div class="classe-icon"><img src="./img/guerrer-darius.webp" alt="guerrer darius">
+            </div>
+            <div class="classe-nom">GUERRER</div>
+            <div class="classe-descripcio">Fort en combats llargs, aguanta bé i fa molt dany cos a
+              cos.</div>
+            <div class="stats-container">
+              <div class="stat-item">
+                <div class="stat-label">💥 Atac</div>
+                <div class="stat-value" id="atac-guerrer">0</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-label">🛡️ Defensa</div>
+                <div class="stat-value" id="defensa-guerrer">0</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-label">⚡ Velocitat</div>
+                <div class="stat-value" id="velocitat-guerrer">0</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-label">✨ Màgia</div>
+                <div class="stat-value" id="magia-guerrer">0</div>
+              </div>
+            </div>
+            <div class="total-stats">
+              <span>TOTAL:</span>
+              <span id="total-guerrer">0</span>
+            </div>
+          </div>
+
+          <!-- Mag -->
+          <div class="classe-card mag">
+            <div class="classe-icon"><img src="./img/mag-lux.webp" alt="mag ,lux"></div>
+            <div class="classe-nom">MAG</div>
+            <div class="classe-descripcio">Dany màgic a distància, control i burst molt clar.</div>
+            <div class="stats-container">
+              <div class="stat-item">
+                <div class="stat-label">💥 Atac</div>
+                <div class="stat-value" id="atac-mag">0</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-label">🛡️ Defensa</div>
+                <div class="stat-value" id="defensa-mag">0</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-label">⚡ Velocitat</div>
+                <div class="stat-value" id="velocitat-mag">0</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-label">✨ Màgia</div>
+                <div class="stat-value" id="magia-mag">0</div>
+              </div>
+            </div>
+            <div class="total-stats">
+              <span>TOTAL:</span>
+              <span id="total-mag">0</span>
+            </div>
+          </div>
+
+          <!-- Arquer -->
+          <div class="classe-card arquer">
+            <div class="classe-icon"><img src="./img/arquera-vayne.webp" alt="arquera vayne"></div>
+            <div class="classe-nom">ARQUER</div>
+            <div class="classe-descripcio">DPS molt alt, ideal per carregar-se equips i objectius.
+            </div>
+            <div class="stats-container">
+              <div class="stat-item">
+                <div class="stat-label">💥 Atac</div>
+                <div class="stat-value" id="atac-arquer">0</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-label">🛡️ Defensa</div>
+                <div class="stat-value" id="defensa-arquer">0</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-label">⚡ Velocitat</div>
+                <div class="stat-value" id="velocitat-arquer">0</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-label">✨ Màgia</div>
+                <div class="stat-value" id="magia-arquer">0</div>
+              </div>
+            </div>
+            <div class="total-stats">
+              <span>TOTAL:</span>
+              <span id="total-arquer">0</span>
+            </div>
+          </div>
+
+          <!-- Assassí -->
+          <div class="classe-card assassi">
+            <div class="classe-icon"><img src="./img/assassi-talon.webp" alt="assassi talon"></div>
+            <div class="classe-nom">ASSASSÍ</div>
+            <div class="classe-descripcio">Ataca ràpid, entra i surt, burst brutal a objectius
+              fràgils.</div>
+            <div class="stats-container">
+              <div class="stat-item">
+                <div class="stat-label">💥 Atac</div>
+                <div class="stat-value" id="atac-assassi">0</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-label">🛡️ Defensa</div>
+                <div class="stat-value" id="defensa-assassi">0</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-label">⚡ Velocitat</div>
+                <div class="stat-value" id="velocitat-assassi">0</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-label">✨ Màgia</div>
+                <div class="stat-value" id="magia-assassi">0</div>
+              </div>
+            </div>
+            <div class="total-stats">
+              <span>TOTAL:</span>
+              <span id="total-assassi">0</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Anàlisi de Classes -->
+      <div class="analisi-section">
+        <h2>Anàlisi de Classes</h2>
+        <div class="analisi-grid">
+          <!-- Millor Atac -->
+          <div class="analisi-card atac">
+            <div class="analisi-icon">💥</div>
+            <div class="analisi-label">Millor en Atac</div>
+            <div class="analisi-resultat" id="millor-atac">???</div>
+            <div class="analisi-valor" id="valor-atac">0</div>
+          </div>
+
+          <!-- Millor Defensa -->
+          <div class="analisi-card defensa">
+            <div class="analisi-icon">🛡️</div>
+            <div class="analisi-label">Millor en Defensa</div>
+            <div class="analisi-resultat" id="millor-defensa">???</div>
+            <div class="analisi-valor" id="valor-defensa">0</div>
+          </div>
+
+          <!-- Millor Velocitat -->
+          <div class="analisi-card velocitat">
+            <div class="analisi-icon">⚡</div>
+            <div class="analisi-label">Millor en Velocitat</div>
+            <div class="analisi-resultat" id="millor-velocitat">???</div>
+            <div class="analisi-valor" id="valor-velocitat">0</div>
+          </div>
+
+          <!-- Millor Màgia -->
+          <div class="analisi-card magia">
+            <div class="analisi-icon">✨</div>
+            <div class="analisi-label">Millor en Màgia</div>
+            <div class="analisi-resultat" id="millor-magia">???</div>
+            <div class="analisi-valor" id="valor-magia">0</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recomanacions per Estil de Joc -->
+      <div class="recomanacions-section">
+        <h2>Recomanacions per Estil de Joc</h2>
+        <div class="recomanacions-grid" id="recomanacions-grid">
+          <!-- S'omplirà dinàmicament -->
+        </div>
+      </div>
+
+      <!-- Checklist -->
+      <div class="checklist">
+        <h3>✅ Checklist de Tasques:</h3>
+        <ul>
+          <li>[ ] Establir stats del GUERRER (atac, defensa, velocitat, màgia)</li>
+          <li>[ ] Calcular total de stats del Guerrer</li>
+          <li>[ ] Actualitzar stats del Guerrer al DOM</li>
+          <li>[ ] Establir stats del MAG</li>
+          <li>[ ] Calcular total de stats del Mag</li>
+          <li>[ ] Actualitzar stats del Mag al DOM</li>
+          <li>[ ] Establir stats de l'aruqer</li>
+          <li>[ ] Calcular total de stats de l'Arquer</li>
+          <li>[ ] Actualitzar stats de l'Arquer al DOM</li>
+          <li>[ ] Establir stats de l'ASSASSÍ</li>
+          <li>[ ] Calcular total de stats de l'Assassí</li>
+          <li>[ ] Actualitzar stats de l'Assassí al DOM</li>
+          <li>[ ] Determinar quina classe té més ATAC (amb if/else)</li>
+          <li>[ ] Determinar quina classe té més DEFENSA</li>
+          <li>[ ] Determinar quina classe té més VELOCITAT</li>
+          <li>[ ] Determinar quina classe té més MÀGIA</li>
+          <li>[ ] Utilitzar SWITCH per recomanar classe segons estil "tanc"</li>
+          <li>[ ] Utilitzar SWITCH per recomanar classe segons estil "dps"</li>
+          <li>[ ] Utilitzar SWITCH per recomanar classe segons estil "velocitat"</li>
+          <li>[ ] Utilitzar SWITCH per recomanar classe segons estil "màgic"</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

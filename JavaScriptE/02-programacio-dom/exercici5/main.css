@@ -1,0 +1,449 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(135deg, #fc466b 0%, #3f5efb 100%);
+  padding: 2.5rem;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+  color: white;
+  font-size: 2.8rem;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+}
+
+.instruccions {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 1.1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.instruccions strong {
+  color: #ffd700;
+  font-weight: bold;
+}
+
+/* Classes Section */
+.classes-section {
+  padding: 2.5rem 2rem;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.classes-section h2 {
+  color: #2c3e50;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.classes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.classe-card {
+  background: white;
+  border-radius: 1.2rem;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+  border: 3px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.classe-card img {
+  width: 175px;
+  object-fit: contain;
+}
+
+.classe-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  transition: height 0.3s;
+}
+
+.classe-card.guerrer::before {
+  background: linear-gradient(90deg, #e74c3c, #c0392b);
+}
+
+.classe-card.mag::before {
+  background: linear-gradient(90deg, #9b59b6, #8e44ad);
+}
+
+.classe-card.arquer::before {
+  background: linear-gradient(90deg, #27ae60, #229954);
+}
+
+.classe-card.assassi::before {
+  background: linear-gradient(90deg, #34495e, #2c3e50);
+}
+
+.classe-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+.classe-card:hover::before {
+  height: 100%;
+  opacity: 0.1;
+}
+
+.classe-icon {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+  filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.2));
+}
+
+.classe-nom {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+  letter-spacing: 1px;
+}
+
+.classe-descripcio {
+  color: #7f8c8d;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.stats-container {
+  background: #f8f9fa;
+  border-radius: 0.8rem;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.stat-item:last-child {
+  border-bottom: none;
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: #555;
+  font-weight: 500;
+}
+
+.stat-value {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #2c3e50;
+  min-width: 50px;
+  text-align: right;
+}
+
+.total-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 0.6rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Anàlisi Section */
+.analisi-section {
+  padding: 2.5rem 2rem;
+  background: white;
+}
+
+.analisi-section h2 {
+  color: #2c3e50;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.analisi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.analisi-card {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  border-left: 6px solid;
+  transition: transform 0.3s;
+}
+
+.analisi-card:hover {
+  transform: translateY(-5px);
+}
+
+.analisi-card.atac {
+  border-left-color: #e74c3c;
+}
+
+.analisi-card.defensa {
+  border-left-color: #3498db;
+}
+
+.analisi-card.velocitat {
+  border-left-color: #f39c12;
+}
+
+.analisi-card.magia {
+  border-left-color: #9b59b6;
+}
+
+.analisi-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.analisi-label {
+  font-size: 1rem;
+  color: #7f8c8d;
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.analisi-resultat {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.analisi-valor {
+  font-size: 1.4rem;
+  color: #27ae60;
+  font-weight: bold;
+}
+
+/* Recomanacions Section */
+.recomanacions-section {
+  padding: 2.5rem 2rem;
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+}
+
+.recomanacions-section h2 {
+  color: #2c3e50;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.recomanacions-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.recomanacio-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  border-top: 5px solid;
+}
+
+.recomanacio-card.tanc {
+  border-top-color: #3498db;
+}
+
+.recomanacio-card.dps {
+  border-top-color: #e74c3c;
+}
+
+.recomanacio-card.velocitat {
+  border-top-color: #f39c12;
+}
+
+.recomanacio-card.magic {
+  border-top-color: #9b59b6;
+}
+
+.recomanacio-estil {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.recomanacio-classe {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.recomanacio-nom {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #34495e;
+  margin-bottom: 0.5rem;
+}
+
+.recomanacio-rao {
+  color: #7f8c8d;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Comparació Section */
+.comparacio-section {
+  padding: 2.5rem 2rem;
+  background: #f8f9fa;
+}
+
+.comparacio-section h2 {
+  color: #2c3e50;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.comparacio-content {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.comparacio-item {
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 0.8rem;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.comparacio-item:last-child {
+  margin-bottom: 0;
+}
+
+.comparacio-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.comparacio-info {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+/* Checklist */
+.checklist {
+  background: #ecf0f1;
+  padding: 2.5rem 2rem;
+  border-left: 6px solid #3498db;
+}
+
+.checklist h3 {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.checklist ul {
+  list-style: none;
+}
+
+.checklist li {
+  padding: 0.7rem 0;
+  color: #555;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/*
+.checklist li::before {
+  content: '[ ] ';
+  color: #3498db;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+  */
+
+/* Responsive */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .classes-grid,
+  .analisi-grid,
+  .recomanacions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .classe-icon {
+    font-size: 4rem;
+  }
+}
+
+/* Animacions */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.classe-card,
+.analisi-card,
+.recomanacio-card {
+  animation: fadeIn 0.6s ease-out;
+}

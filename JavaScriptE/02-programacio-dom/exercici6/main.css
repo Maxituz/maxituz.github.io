@@ -1,0 +1,576 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  padding: 2.5rem;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.header::before {
+  content: '🏆';
+  position: absolute;
+  font-size: 15rem;
+  opacity: 0.1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+h1 {
+  color: white;
+  font-size: 3rem;
+  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+  margin-bottom: 0.5rem;
+  letter-spacing: 3px;
+  position: relative;
+  z-index: 1;
+}
+
+.instruccions {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 1.1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 1;
+}
+
+.instruccions strong {
+  color: #ffd700;
+  font-weight: bold;
+}
+
+/* Equips Section */
+.equips-section {
+  padding: 2.5rem 2rem;
+  background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+}
+
+.equips-section h2 {
+  color: #2c3e50;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.equips-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.equip-card {
+  background: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+  border-left: 5px solid;
+  animation: slideIn 0.5s ease-out;
+}
+
+.equip-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.equip-icon {
+  font-size: 3.5rem;
+  text-align: center;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.equip-icon img {
+  width: 150px;
+  object-fit: contain;
+}
+
+.equip-nom {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.equip-punts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #27ae60;
+}
+
+.equip-punts-label {
+  font-size: 1rem;
+  color: #7f8c8d;
+}
+
+/* Estadístiques Section */
+.estadistiques-section {
+  padding: 2.5rem 2rem;
+  background: white;
+}
+
+.estadistiques-section h2 {
+  color: #2c3e50;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+}
+
+.stat-card:hover {
+  transform: scale(1.05);
+}
+
+.stat-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.stat-label {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Classificació Section */
+.classificacio-section {
+  padding: 2.5rem 2rem;
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+}
+
+.classificacio-section h2 {
+  color: #2c3e50;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.taula-container {
+  margin: 0 auto;
+  max-width: 900px;
+  background: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.taula-classificacio {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.taula-classificacio thead {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.taula-classificacio th {
+  padding: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+}
+
+.taula-classificacio td {
+  padding: 1.2rem;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+.taula-classificacio tbody tr {
+  transition: background-color 0.3s;
+}
+
+.taula-classificacio tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.taula-classificacio tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.pos-col {
+  width: 20%;
+  text-align: center !important;
+}
+
+.equip-escut {
+  width: 10%;
+  text-align: center !important;
+}
+
+.equip-escut img {
+  margin: 0 auto;
+  width: 75px;
+  object-fit: contain;
+}
+
+.equip-col {
+  width: 30%;
+  text-align: center !important;
+}
+
+.punts-col {
+  width: 30%;
+  text-align: center !important;
+}
+
+.diferencia-col {
+  width: 20%;
+  text-align: center !important;
+}
+
+.medalles-col {
+  width: 20%;
+  text-align: center !important;
+}
+
+.posicio-numero {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.posicio-1 {
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+  color: #333;
+  box-shadow: 0 4px 10px rgba(255, 215, 0, 0.5);
+}
+
+.posicio-2 {
+  background: linear-gradient(135deg, #c0c0c0 0%, #e8e8e8 100%);
+  color: #333;
+  box-shadow: 0 4px 10px rgba(192, 192, 192, 0.5);
+}
+
+.posicio-3 {
+  background: linear-gradient(135deg, #cd7f32 0%, #d4a76a 100%);
+  color: white;
+  box-shadow: 0 4px 10px rgba(205, 127, 50, 0.5);
+}
+
+.posicio-normal {
+  background: #ecf0f1;
+  color: #2c3e50;
+}
+
+.equip-nom-taula {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #2c3e50;
+}
+
+.punts-valor {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #27ae60;
+}
+
+.diferencia-valor {
+  font-size: 1.1rem;
+  color: #e74c3c;
+}
+
+.diferencia-lider {
+  color: #ffd700;
+  font-weight: bold;
+}
+
+.premi-medalles {
+  font-size: 2rem;
+}
+
+/* Zones de classificació */
+.zona-champions {
+  border-left: 5px solid #27ae60;
+  background: rgba(39, 174, 96, 0.05);
+}
+
+.zona-europa {
+  border-left: 5px solid #3498db;
+  background: rgba(52, 152, 219, 0.05);
+}
+
+.zona-mitjana {
+  border-left: 5px solid #95a5a6;
+}
+
+.zona-descens {
+  border-left: 5px solid #e74c3c;
+  background: rgba(231, 76, 60, 0.05);
+}
+
+/* Anàlisi Section */
+.analisi-section {
+  padding: 2.5rem 2rem;
+  background: white;
+}
+
+.analisi-section h2 {
+  color: #2c3e50;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.analisi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.analisi-card {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  border-top: 5px solid;
+}
+
+.analisi-card.champions {
+  border-top-color: #27ae60;
+}
+
+.analisi-card.europa {
+  border-top-color: #3498db;
+}
+
+.analisi-card.descens {
+  border-top-color: #e74c3c;
+}
+
+.analisi-titol {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.analisi-llista {
+  list-style: none;
+  padding: 0;
+}
+
+.analisi-llista li {
+  padding: 0.8rem;
+  background: white;
+  margin-bottom: 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 1.1rem;
+  color: #34495e;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Comparacions Section */
+.comparacions-section {
+  padding: 2.5rem 2rem;
+  background: #f8f9fa;
+}
+
+.comparacions-section h2 {
+  color: #2c3e50;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.comparacions-content {
+  display: grid;
+  gap: 1rem;
+}
+
+.comparacio-item {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 0.8rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #3498db;
+}
+
+.comparacio-equips {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 0.8rem;
+}
+
+.comparacio-resultat {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  line-height: 1.6;
+}
+
+/* Resum Section */
+.resum-section {
+  padding: 2.5rem 2rem;
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+}
+
+.resum-section h2 {
+  color: #2c3e50;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.resum-content {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.resum-item {
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 0.8rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.resum-item:last-child {
+  margin-bottom: 0;
+}
+
+.resum-titol {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.resum-info {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  opacity: 0.95;
+}
+
+/* Checklist */
+.checklist {
+  background: #ecf0f1;
+  padding: 2.5rem 2rem;
+  border-left: 6px solid #e74c3c;
+}
+
+.checklist h3 {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.checklist ul {
+  list-style: none;
+}
+
+.checklist li {
+  padding: 0.7rem 0;
+  color: #555;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* Animacions */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .equips-grid,
+  .stats-grid,
+  .analisi-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .taula-classificacio {
+    font-size: 0.85rem;
+  }
+
+  .taula-classificacio th,
+  .taula-classificacio td {
+    padding: 0.8rem 0.5rem;
+  }
+
+  .posicio-numero {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 1rem;
+  }
+}

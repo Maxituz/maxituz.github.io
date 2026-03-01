@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercici 7 - Historial de Batalles</title>
+    <link rel="stylesheet" href="./main.css">
+    <script type="module" src="./main.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <div class="header">
+        <h1>⚔️ HISTORIAL DE BATALLES ⚔️</h1>
+        <p class="instruccions">Completa les tasques del fitxer <strong>main.js</strong> per
+          gestionar batalles amb <strong>bucles while i forEach</strong>!</p>
+      </div>
+
+      <!-- Estat del Jugador -->
+      <div class="jugador-section">
+        <h2>El Teu Perfil de Guerrer</h2>
+        <div class="jugador-card">
+          <div class="jugador-avatar">
+            <img src="./img/elden-ring-protagonista.webp" alt="Jugador Elden Ring">
+          </div>
+          <div class="jugador-info">
+            <div class="jugador-nom">
+              <span class="label">Nom:</span>
+              <span class="valor" id="nom-jugador">???</span>
+            </div>
+            <div class="jugador-nivell">
+              <span class="label">Nivell:</span>
+              <span class="valor nivell-valor" id="nivell-jugador">1</span>
+            </div>
+            <div class="jugador-xp">
+              <div class="xp-label">
+                <span>XP:</span>
+                <span id="xp-actual">0</span>
+                <span>/</span>
+                <span id="xp-necessaria">100</span>
+              </div>
+              <div class="xp-barra-container">
+                <div class="xp-barra" id="xp-barra"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Estadístiques de Combat -->
+      <div class="stats-section">
+        <h2>Estadístiques de Combat</h2>
+        <div class="stats-grid">
+          <div class="stat-card victories">
+            <div class="stat-icon">🏆</div>
+            <div class="stat-label">Victòries</div>
+            <div class="stat-value" id="total-victories">0</div>
+          </div>
+          <div class="stat-card defeats">
+            <div class="stat-icon">💀</div>
+            <div class="stat-label">Derrotes</div>
+            <div class="stat-value" id="total-derrotes">0</div>
+          </div>
+          <div class="stat-card xp-total">
+            <div class="stat-icon">✨</div>
+            <div class="stat-label">XP Total Guanyada</div>
+            <div class="stat-value" id="xp-total-guanyada">0</div>
+          </div>
+          <div class="stat-card ratio">
+            <div class="stat-icon">📈</div>
+            <div class="stat-label">Ràtio V/D</div>
+            <div class="stat-value" id="ratio-victories">0%</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Historial de Batalles -->
+      <div class="batalles-section">
+        <h2>Historial de Batalles</h2>
+        <div class="filtres-container">
+          <div class="filtre-info">
+            <span>Total de batalles:</span>
+            <span id="total-batalles">0</span>
+          </div>
+        </div>
+        <div class="batalles-grid" id="batalles-grid">
+          <!-- S'omplirà dinàmicament -->
+        </div>
+      </div>
+
+      <!-- Anàlisi d'Enemics -->
+      <div class="enemics-section">
+        <h2>👾 Anàlisi d'Enemics Derrotats</h2>
+        <div class="enemics-grid" id="enemics-grid">
+          <!-- S'omplirà dinàmicament -->
+        </div>
+      </div>
+
+      <!-- Millors Batalles -->
+      <div class="millors-section">
+        <h2>Millors Batalles</h2>
+        <div class="millors-grid">
+          <div class="millor-card">
+            <div class="millor-titol">💰 Més XP Guanyada</div>
+            <div class="millor-content" id="millor-xp">
+              <!-- S'omplirà dinàmicament -->
+            </div>
+          </div>
+          <div class="millor-card">
+            <div class="millor-titol">⚔️ Primera Victòria</div>
+            <div class="millor-content" id="primera-victoria">
+              <!-- S'omplirà dinàmicament -->
+            </div>
+          </div>
+          <div class="millor-card">
+            <div class="millor-titol">💀 Primera Derrota</div>
+            <div class="millor-content" id="primera-derrota">
+              <!-- S'omplirà dinàmicament -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Checklist -->
+      <div class="checklist">
+        <h3>✅ Checklist de Tasques:</h3>
+        <ul>
+          <li>[ ] Establir nom del jugador i stats inicials</li>
+          <li>[ ] Crear un vector amb l'historial de 10 batalles</li>
+          <li>[ ] Utilitzar WHILE per processar batalles mentre hi ha XP per guanyar</li>
+          <li>[ ] Calcular XP total guanyada amb bucle WHILE</li>
+          <li>[ ] Comptar victòries amb bucle FOR</li>
+          <li>[ ] Comptar derrotes amb bucle FOR</li>
+          <li>[ ] Utilitzar FOREACH per mostrar totes les batalles al DOM</li>
+          <li>[ ] Calcular nivell actual segons XP total</li>
+          <li>[ ] Actualitzar barra de progressió XP</li>
+          <li>[ ] Trobar la batalla amb més XP guanyada</li>
+          <li>[ ] Trobar la primera victòria de l'historial</li>
+          <li>[ ] Trobar la primera derrota de l'historial</li>
+          <li>[ ] Calcular percentatge de victòries</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

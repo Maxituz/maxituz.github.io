@@ -1,0 +1,659 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  background: #f5f5f5;
+  border-radius: 1rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(135deg, #834d9b 0%, #d04ed6 100%);
+  padding: 2.5rem;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.header::before {
+  content: '⚔️';
+  position: absolute;
+  font-size: 20rem;
+  opacity: 0.08;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-15deg);
+}
+
+h1 {
+  color: white;
+  font-size: 3rem;
+  text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.5);
+  margin-bottom: 0.5rem;
+  letter-spacing: 3px;
+  position: relative;
+  z-index: 1;
+}
+
+.instruccions {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 1.1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 1;
+}
+
+.instruccions strong {
+  color: #ffd700;
+  font-weight: bold;
+}
+
+/* Jugador Section */
+.jugador-section {
+  padding: 2.5rem 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.jugador-section h2 {
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.jugador-card {
+  background: white;
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.jugador-avatar {
+  font-size: 8rem;
+  filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.3));
+  animation: float 3s ease-in-out infinite;
+}
+
+.jugador-avatar img {
+  filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.3));
+  max-width: 200px;
+  object-fit: contain;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.jugador-info {
+  flex: 1;
+}
+
+.jugador-nom,
+.jugador-nivell {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.jugador-nom .label,
+.jugador-nivell .label {
+  font-size: 1.3rem;
+  color: #7f8c8d;
+  font-weight: 500;
+}
+
+.jugador-nom .valor {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.jugador-nivell .valor {
+  font-size: 2.5rem;
+  font-weight: bold;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.jugador-xp {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 1rem;
+}
+
+.xp-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.xp-barra-container {
+  height: 30px;
+  background: #e0e0e0;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.xp-barra {
+  height: 100%;
+  background: linear-gradient(90deg, #00f260 0%, #0575e6 100%);
+  border-radius: 15px;
+  transition: width 0.5s ease-out;
+  box-shadow: 0 2px 8px rgba(0, 242, 96, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.xp-barra::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  to {
+    left: 200%;
+  }
+}
+
+/* Stats Section */
+.stats-section {
+  padding: 2.5rem 2rem;
+  background: white;
+}
+
+.stats-section h2 {
+  color: #2c3e50;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.stat-card {
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s;
+  color: white;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px) scale(1.02);
+}
+
+.stat-card.victories {
+  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+}
+
+.stat-card.defeats {
+  background: linear-gradient(135deg, #eb3349 0%, #f45c43 100%);
+}
+
+.stat-card.xp-total {
+  background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);
+}
+
+.stat-card.ratio {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.stat-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.stat-label {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Batalles Section */
+.batalles-section {
+  padding: 2.5rem 2rem;
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+}
+
+.batalles-section h2 {
+  color: #2c3e50;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.filtres-container {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.filtres-container span:last-child {
+  color: #e74c3c;
+  font-size: 1.5rem;
+}
+
+.batalles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.batalla-card {
+  background: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s;
+  border-left: 5px solid;
+  animation: slideIn 0.5s ease-out;
+}
+
+.batalla-card.victoria {
+  border-left-color: #27ae60;
+  background: linear-gradient(135deg, rgba(39, 174, 96, 0.05) 0%, white 100%);
+}
+
+.batalla-card.derrota {
+  border-left-color: #e74c3c;
+  background: linear-gradient(135deg, rgba(231, 76, 60, 0.05) 0%, white 100%);
+}
+
+.batalla-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.batalla-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #ecf0f1;
+}
+
+.batalla-numero {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  font-weight: bold;
+}
+
+.batalla-resultat {
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0.3rem 1rem;
+  border-radius: 1rem;
+}
+
+.batalla-resultat.victoria {
+  background: #27ae60;
+  color: white;
+}
+
+.batalla-resultat.derrota {
+  background: #e74c3c;
+  color: white;
+}
+
+.batalla-enemic {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 0.8rem;
+}
+
+.batalla-enemic img {
+  width: 150px;
+  object-fit: contain;
+}
+
+.batalla-nom {
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.batalla-xp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #f39c12;
+}
+
+/* Enemics Section */
+.enemics-section {
+  padding: 2.5rem 2rem;
+  background: white;
+}
+
+.enemics-section h2 {
+  color: #2c3e50;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.enemics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.enemic-card {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.enemic-card:hover {
+  transform: scale(1.05);
+}
+
+.enemic-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.enemic-nom {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 0.8rem;
+}
+
+.enemic-vegades {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+}
+
+.enemic-vegades-num {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #e74c3c;
+}
+
+/* Millors Section */
+.millors-section {
+  padding: 2.5rem 2rem;
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+}
+
+.millors-section h2 {
+  color: #2c3e50;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.millors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.millor-card {
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border-top: 5px solid #667eea;
+}
+
+.millor-titol {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.millor-content {
+  font-size: 1.1rem;
+  color: #34495e;
+  text-align: center;
+  line-height: 1.8;
+}
+
+.millors-batalles {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.millors-batalles img {
+  width: 150px;
+  object-fit: contain;
+}
+
+.millors-batalles-xp {
+  color: #f39c12;
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.millors-batalles-victoria {
+  color: #27ae60;
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.millors-batalles-derrota {
+  color: #e74c3c;
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+/* Progressió Section */
+.progressio-section {
+  padding: 2.5rem 2rem;
+  background: #f8f9fa;
+}
+
+.progressio-section h2 {
+  color: #2c3e50;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.progressio-content {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.progressio-item {
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 0.8rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+/* Resum Section */
+.resum-section {
+  padding: 2.5rem 2rem;
+  background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+}
+
+.resum-section h2 {
+  color: #2c3e50;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.resum-content {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.resum-item {
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+  border-radius: 0.8rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.resum-item:last-child {
+  margin-bottom: 0;
+}
+
+.resum-titol {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.8rem;
+}
+
+.resum-info {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  opacity: 0.95;
+}
+
+/* Checklist */
+.checklist {
+  background: #ecf0f1;
+  padding: 2.5rem 2rem;
+  border-left: 6px solid #9b59b6;
+}
+
+.checklist h3 {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.checklist ul {
+  list-style: none;
+}
+
+.checklist li {
+  padding: 0.7rem 0;
+  color: #555;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.checklist li::before {
+  color: #9b59b6;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+/* Animacions */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .jugador-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .jugador-avatar {
+    font-size: 6rem;
+  }
+
+  .stats-grid,
+  .batalles-grid,
+  .enemics-grid,
+  .millors-grid {
+    grid-template-columns: 1fr;
+  }
+}

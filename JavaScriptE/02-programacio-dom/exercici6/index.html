@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercici 6 - Classificació de Lliga</title>
+    <link rel="stylesheet" href="./main.css">
+    <script type="module" src="./main.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <div class="header">
+        <h1>🏆 CLASSIFICACIÓ DE LA LLIGA 🏆</h1>
+        <p class="instruccions">Completa les tasques del fitxer <strong>main.js</strong> per
+          gestionar la lliga amb <strong>bucles for</strong>!</p>
+      </div>
+
+      <!-- Equips Participants -->
+      <div class="equips-section">
+        <h2>Equips Participants</h2>
+        <div class="equips-grid" id="equips-grid">
+          <!-- S'omplirà dinàmicament amb JavaScript -->
+        </div>
+      </div>
+
+      <!-- Estadístiques Generals -->
+      <div class="estadistiques-section">
+        <h2>Estadístiques Generals</h2>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon">🎯</div>
+            <div class="stat-label">Total Punts</div>
+            <div class="stat-value" id="total-punts">0</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">📈</div>
+            <div class="stat-label">Mitjana de Punts</div>
+            <div class="stat-value" id="mitjana-punts">0</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">🥇</div>
+            <div class="stat-label">Punts Màxims</div>
+            <div class="stat-value" id="punts-maxims">0</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">🥉</div>
+            <div class="stat-label">Punts Mínims</div>
+            <div class="stat-value" id="punts-minims">0</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Taula de Classificació -->
+      <div class="classificacio-section">
+        <h2>Taula de Classificació</h2>
+        <div class="taula-container">
+          <table class="taula-classificacio">
+            <thead>
+              <tr>
+                <th class="pos-col">POS</th>
+                <th class="equip-escut">ESCUT</th>
+                <th class="equip-col">EQUIP</th>
+                <th class="punts-col">PUNTS</th>
+              </tr>
+            </thead>
+            <tbody id="taula-body">
+              <!-- S'omplirà dinàmicament amb JavaScript -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Checklist -->
+      <div class="checklist">
+        <h3>✅ Checklist de Tasques:</h3>
+        <ul>
+          <li>[ ] Crear array amb 6 equips i les seves puntuacions</li>
+          <li>[ ] Utilitzar bucle FOR per mostrar tots els equips al DOM</li>
+          <li>[ ] Utilitzar bucle FOR per calcular el total de punts</li>
+          <li>[ ] Calcular la mitjana de punts</li>
+          <li>[ ] Utilitzar bucle FOR per trobar els punts màxims</li>
+          <li>[ ] Utilitzar bucle FOR per trobar els punts mínims</li>
+          <li>[ ] Ordenar l'array d'equips per puntuació (manual amb bucles)</li>
+          <li>[ ] Utilitzar bucle FOR per generar la taula de classificació</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
