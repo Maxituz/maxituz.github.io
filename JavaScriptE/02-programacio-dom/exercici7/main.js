@@ -113,9 +113,15 @@ const batalles = [
 
 let indexBatalla = 0;
 let xpTotalGuanyada = 0;
-
 // Utilitza un bucle while per processar cada batalla
-
+console.log(batalles.length);
+while (indexBatalla < batalles.length) {
+  if (batalles[indexBatalla].resultat == 'victoria') {
+    console.log(batalles[indexBatalla].xpGuanyada);
+    xpTotalGuanyada += batalles[indexBatalla].xpGuanyada;
+  }
+  indexBatalla++;
+}
 // ============================================
 // ✅ TASCA 4: Calcular nivell segons XP amb WHILE
 // ============================================
@@ -127,7 +133,11 @@ let xpTotalGuanyada = 0;
 xpActual = xpTotalGuanyada;
 nivellActual = 1;
 let xpRestant = xpActual;
-
+console.log(xpTotalGuanyada);
+while (xpRestant >= xpPerNivell) {
+  xpRestant -= xpPerNivell;
+  nivellActual++;
+}
 // ============================================
 // ✅ TASCA 5: Actualitzar barra de progressió XP
 // ============================================
@@ -149,7 +159,11 @@ document.querySelector('#xp-barra').style.width = `${percentatgeXP}%`;
 let totalVictories = 0;
 
 // Utilitza un bucle for per calcular el total de victòries
-
+for (let i = 0; i < batalles.length; i++) {
+  if (batalles[i].resultat == 'victoria') {
+    totalVictories += 1;
+  }
+}
 //Actualitzar el DOM
 document.querySelector('#total-victories').textContent = totalVictories;
 
@@ -162,7 +176,11 @@ document.querySelector('#total-victories').textContent = totalVictories;
 let totalDerrotes = 0;
 
 // Utilitza un bucle for per calcular el total de derrotes
-
+for (let i = 0; i < batalles.length; i++) {
+  if (batalles[i].resultat == 'derrota') {
+    totalDerrotes += 1;
+  }
+}
 // Actualitzar el DOM
 document.querySelector('#total-derrotes').textContent = totalDerrotes;
 
@@ -215,7 +233,23 @@ batallesGrid.innerHTML = '';
 document.querySelector('#total-batalles').textContent = batalles.length;
 
 // Utilitza forEach(batalla,index) per recórrer l'array de batalles i omplir el batallesGrid
-
+batalles.forEach((batalla, index) => {
+  batallesGrid.innerHTML += `
+  <div class="batalla-card ${batalla.resultat}">
+    <div class="batalla-header">
+      <span class="batalla-numero">Batalla #${index + 1}</span>
+      <span class="batalla-resultat ${batalla.resultat}">
+        ${batalla.resultat === 'victoria' ? 'VICTÒRIA' : 'DERROTA'}
+      </span>
+    </div>
+    <div class="batalla-enemic"><img src="${batalla.enemic.icon}"></div>
+    <div class="batalla-nom">${batalla.enemic.nom}</div>
+    <div class="batalla-xp">
+      ✨ +${batalla.xpGuanyada} XP
+    </div>
+  </div>
+`;
+});
 /*
 batallesGrid.innerHTML = `
   <div class="batalla-card ${batalla.resultat}">
@@ -243,7 +277,11 @@ let batallaMesXP = batalles[0];
 
 // Bucle for per recórrer el vector de batalles i comparar xpGuanyada de cada batalla
 //  - Si la xpGuanyada actual és mes gran que la batallaMesXP.xpGuanyada canvia la batallaMesXP
-
+for (let i = 0; i < batalles.length; i++) {
+  if (batalles[i].xpGuanyada > batallaMesXP.xpGuanyada) {
+    batallaMesXP = batalles[i];
+  }
+}
 // Actualitzar DOM
 document.querySelector('#millor-xp').innerHTML = `
   <div class="millors-batalles"><img src="${batallaMesXP.enemic.icon}"></div>
@@ -259,7 +297,12 @@ document.querySelector('#millor-xp').innerHTML = `
 let primeraVictoria;
 
 // Utilitza un bucle (while o for)
-
+for (let i = 0; i < batalles.length; i++) {
+  if (batalles[i].resultat == 'victoria') {
+    primeraVictoria = batalles[i];
+    break;
+  }
+}
 if (primeraVictoria) {
   // Actualitzar DOM
   document.querySelector('#primera-victoria').innerHTML = `
@@ -277,7 +320,12 @@ if (primeraVictoria) {
 let primeraDerrota;
 
 // Utilitza un bucle (while o for)
-
+for (let i = 0; i < batalles.length; i++) {
+  if (batalles[i].resultat == 'derrota') {
+    primeraDerrota = batalles[i];
+    break;
+  }
+}
 if (primeraDerrota) {
   // Actualitzar DOM
   document.querySelector('#primera-derrota').innerHTML = `

@@ -82,17 +82,19 @@ equipsGrid.innerHTML = '';
 //    vectorEquips[0].punts
 
 // CODI QUE ES REPETEIX DINS EL BUCLE FOR
-equipsGrid.innerHTML += `
+
+for (let i = 0; i < vectorEquips.length; i++) {
+  equipsGrid.innerHTML += `
   <div class="equip-card">
-    <div class="equip-icon"><img src="./url-imatge-equip.webp"></div>
-    <div class="equip-nom">Nom Equip</div>
+    <div class="equip-icon"><img src="${vectorEquips[i].icon}"></div>
+    <div class="equip-nom">${vectorEquips[i].nom}</div>
     <div class="equip-punts">
-      <span class="equip-punts-label">Punts:</span>
+      <span class="equip-punts-label">Punts:${vectorEquips[i].punts}</span>
       XXXX
     </div>
   </div>
 `;
-
+}
 // ============================================
 // PART 3: CÀLCULS AMB BUCLE FOR
 // ============================================
@@ -105,7 +107,9 @@ let totalPunts = 0;
 // Utilitza un bucle for per sumar els punts de tots els equips
 // totalPunts és un acumulador de punts
 totalPunts = 0;
-
+for (let i = 0; i < vectorEquips.length; i++) {
+  totalPunts += vectorEquips[i].punts;
+}
 // Actualitzar el DOM amb els punts totals dels equips
 document.querySelector('#total-punts').textContent = totalPunts;
 
@@ -117,7 +121,7 @@ let mitjanaPunts = 0;
 
 // Divideix el totalPunts entre el número total d'equips
 // El número total d'equips no el pots posar manualment (has d'utilitzar la longitud del vector)
-
+mitjanaPunts = totalPunts / vectorEquips.length;
 // Actualitzar DOM
 document.querySelector('#mitjana-punts').textContent = mitjanaPunts;
 
@@ -132,8 +136,14 @@ let puntsMaxims;
 // Has de comparar cada equip amb aquest valor (puntsMaxims):
 //    Si els punts de l'equip [i] és més gran que puntsMaxims
 //    puntsMaxims = punts de l'equip [i]
-
-puntsMaxims = vectorEquips[0].punts;
+for (let i = 0; i < vectorEquips.length; i++) {
+  if (i == 0) {
+    puntsMaxims = vectorEquips[i].punts;
+  }
+  if (vectorEquips[i].punts > puntsMaxims) {
+    puntsMaxims = vectorEquips[i].punts;
+  }
+}
 
 // Actualitzar el DOM
 document.querySelector('#punts-maxims').textContent = puntsMaxims;
@@ -148,7 +158,14 @@ let puntsMinims;
 //    Si els punts de l'equip [i] és més petit que puntsMinims
 //    puntsMinims = punts de l'equip [i]
 
-puntsMinims = vectorEquips[0].punts;
+for (let i = 0; i < vectorEquips.length; i++) {
+  if (i == 0) {
+    puntsMinims = vectorEquips[i].punts;
+  }
+  if (vectorEquips[i].punts < puntsMinims) {
+    puntsMinims = vectorEquips[i].punts;
+  }
+}
 
 // Actualitzar DOM
 document.querySelector('#punts-minims').textContent = puntsMinims;
@@ -169,13 +186,17 @@ document.querySelector('#punts-minims').textContent = puntsMinims;
 for (let i = 0; i < vectorEquips.length - 1; i++) {
   for (let j = 0; j < vectorEquips.length - 1 - i; j++) {
     let equipTemporal;
+    if (vectorEquips[i].punts < vectorEquips[i + 1].punts) {
+      equipTemporal = vectorEquips[j];
+      vectorEquips[j] = vectorEquips[j + 1];
+      vectorEquips[j + 1] = equipTemporal;
+    }
     // Si l'equip actual té menys punts que el següent, intercanvia'ls
     //    1. Guardar l'equip [j] actual a la variable temporal
     //    2. Sobreescriure l'equip [j] i posar l'equip [j+1]
     //    3. Sobrrescriure l'equip [j+1] i posar l'equip guardat a la variable temporal
   }
 }
-console.log(vectorEquips);
 
 // ============================================
 // PART 5: GENERAR TAULA DE CLASSIFICACIÓ
@@ -189,22 +210,21 @@ const taulaBody = document.querySelector('#taula-body');
 taulaBody.innerHTML = '';
 
 // Utilitza un bucle for per recórrer el vector i generant cada fila de la taula
-
-// CODI QUE ES REPETEIX DINS EL BUCLE FOR
-// Afegir una nova fila a la taula
-taulaBody.innerHTML += `
+for (let i = 0; i < vectorEquips.length; i++) {
+  taulaBody.innerHTML += `
   <tr>
     <td class="pos-col">
-      <span class="posicio-numero">XX</span>
+      <span class="posicio-numero">${i}</span>
     </td>
     <td>
-      <span class="equip-escut"><img src="./img/escrut-equip.webp"></span>
+      <span class="equip-escut"><img src="${vectorEquips[i].icon}"></span>
     </td>
     <td class="equip-col">
-      <span class="equip-nom-taula">Nom Equip</span>
+      <span class="equip-nom-taula">${vectorEquips[i].nom}</span>
     </td>
     <td class="punts-col">
-      <span class="punts-valor">Punts Equip</span>
+      <span class="punts-valor">${vectorEquips[i].punts}</span>
     </td>
   </tr>
 `;
+}

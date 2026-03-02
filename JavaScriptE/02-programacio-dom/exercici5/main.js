@@ -163,6 +163,21 @@ divTotalAssassi.textContent = totalAssassi;
 let millorAtacNom; // GUERRER, MAG, ARQUER, ASSASSÍ
 let millorAtacValor; // atacGuerrer, atacMag, atacArquer, atacAssassi
 
+millorAtacValor = atacGuerrer;
+millorAtacNom = 'GUERRER';
+if (atacMag > millorAtacValor) {
+  millorAtacValor = atacMag;
+  millorAtacNom = 'MAG';
+}
+if (atacArquer > millorAtacValor) {
+  millorAtacValor = atacArquer;
+  millorAtacNom = 'ARQUER';
+}
+if (atacAssassi > millorAtacValor) {
+  millorAtacValor = atacAssassi;
+  millorAtacNom = 'ASSASSÍ';
+}
+
 //ESTRUCTURES IF-ELSE
 
 // Actualitzar el DOM amb el millorAtacNom i millorAtacValor
@@ -182,7 +197,20 @@ let millorDefensaNom; // GUERRER, MAG, ARQUER, ASSASSÍ
 let millorDefensaValor; // defensaGuerrer, defensaMag, defensaArquer, defensaAssassi
 
 //ESTRUCTURES IF-ELSE
-
+millorDefensaValor = defensaGuerrer;
+millorDefensaNom = 'GUERRER';
+if (atacMag > millorDefensaValor) {
+  millorDefensaValor = defensaMag;
+  millorDefensaNom = 'MAG';
+}
+if (atacArquer > millorDefensaValor) {
+  millorDefensaValor = defensaArquer;
+  millorDefensaNom = 'ARQUER';
+}
+if (atacAssassi > millorDefensaValor) {
+  millorDefensaValor = defensaAssassi;
+  millorDefensaNom = 'ASSASSÍ';
+}
 // Actualitzar DOM el millorDefensaNom i millorDefensaValor
 const divMillorDefensa = document.querySelector('#millor-defensa');
 const divValorDefensa = document.querySelector('#valor-defensa');
@@ -200,7 +228,20 @@ let millorVelocitatNom; // GUERRER, MAG, ARQUER, ASSASSÍ
 let millorVelocitatValor; // velocitatGuerrer, velocitatMag, velocitatArquer, velocitatAssassi
 
 //ESTRUCTURES IF-ELSE
-
+millorVelocitatValor = velocitatGuerrer;
+millorVelocitatNom = 'GUERRER';
+if (velocitatMag > millorVelocitatValor) {
+  millorVelocitatValor = velocitatMag;
+  millorVelocitatNom = 'MAG';
+}
+if (velocitatArquer > millorVelocitatValor) {
+  millorVelocitatValor = velocitatArquer;
+  millorVelocitatNom = 'ARQUER';
+}
+if (velocitatAssassi > millorVelocitatValor) {
+  millorVelocitatValor = velocitatAssassi;
+  millorVelocitatNom = 'ASSASSÍ';
+}
 // Actualitzar DOM amb el millorVelocitatNom i millorVelocitatValor
 const divMillorVelocitat = document.querySelector('#millor-velocitat');
 const divValorVelocitat = document.querySelector('#valor-velocitat');
@@ -218,7 +259,20 @@ let millorMagiaNom; // GUERRER, MAG, ARQUER, ASSASSÍ
 let millorMagiaValor; // magiaGuerrer, magiaMag, magiaArquer, magiaAssassi
 
 //ESTRUCTURES IF-ELSE
-
+millorMagiaValor = defensaGuerrer;
+millorMagiaNom = 'GUERRER';
+if (magiaMag > millorMagiaValor) {
+  millorMagiaValor = magiaMag;
+  millorMagiaNom = 'MAG';
+}
+if (magiaArquer > millorMagiaValor) {
+  millorMagiaValor = magiaArquer;
+  millorMagiaNom = 'ARQUER';
+}
+if (magiaAssassi > millorMagiaValor) {
+  millorMagiaValor = magiaAssassi;
+  millorMagiaNom = 'ASSASSÍ';
+}
 // Actualitzar DOM el millorMagiaNom i millorMagiaValor
 const divMillorMagia = document.querySelector('#millor-magia');
 const divValorMagia = document.querySelector('#valor-magia');
@@ -265,7 +319,48 @@ let raoTanc; // (EXCEL·LENT, ACCEPTABLE, NO RECOMANAT)
 //switch (millorDefensaNom)
 //classeTanc = "NOMPERSONATGE"
 //raoTanc = "..."
-
+switch (millorDefensaNom) {
+  case 'GUERRER':
+    classeTanc = 'GUERRER';
+    if (defensaGuerrer >= 80) {
+      raoTanc = 'EXCEL·LENT';
+    } else if (defensaGuerrer >= 40) {
+      raoTanc = 'ACCEPTABLE';
+    } else {
+      raoTanc = 'NO RECOMANAT';
+    }
+    break;
+  case 'MAG':
+    classeTanc = 'MAG';
+    if (defensaMag >= 80) {
+      raoTanc = 'EXCEL·LENT';
+    } else if (defensaMag >= 40) {
+      raoTanc = 'ACCEPTABLE';
+    } else {
+      raoTanc = 'NO RECOMANAT';
+    }
+    break;
+  case 'ARQUER':
+    classeTanc = 'ARQUER';
+    if (defensaArquer >= 80) {
+      raoTanc = 'EXCEL·LENT';
+    } else if (defensaArquer >= 40) {
+      raoTanc = 'ACCEPTABLE';
+    } else {
+      raoTanc = 'NO RECOMANAT';
+    }
+    break;
+  case 'ASSASSÍ':
+    classeTanc = 'ASSASSÍ';
+    if (defensaAssassi >= 80) {
+      raoTanc = 'EXCEL·LENT';
+    } else if (defensaAssassi >= 40) {
+      raoTanc = 'ACCEPTABLE';
+    } else {
+      raoTanc = 'NO RECOMANAT';
+    }
+    break;
+}
 // Afegir al DOM la classeTanc i la raoTanc
 recomanacionsGrid.innerHTML += `
   <div class="recomanacio-card tanc">
@@ -290,13 +385,38 @@ let classeDps; // (GUERRER, MAG, ARQUER, ASSASSÍ)
 let raoDps; // (EXCEL·LENT, ACCEPTABLE, NO RECOMANAT)
 
 // Utilitza if/else per verificar quina és la millor classeDPS.
-
+let millorDps = Math.max(guerrerDps, magDps, arquerDps, assassiDps);
+console.log(millorDps);
+console.log(guerrerDps);
+console.log(magDps);
+console.log(arquerDps);
+console.log(assassiDps);
+if (millorDps == guerrerDps) {
+  classeDps = 'GUERRER';
+} else if (millorDps == magDps) {
+  classeDps = 'MAG';
+} else if (millorDps == arquerDps) {
+  classeDps = 'ARQUER';
+} else {
+  classeDps = 'ASSASSÍ';
+}
+console.log(classeDps);
 // Utilitza switch per determinar la raoDPS segons la classeDPS
 // GUERRER --> ACCEPTABLE
 // ARQUER --> EXCEL·LENT
 // ASSASSÍ --> EXCEL·LENT
 // MAG --> NO RECOMANAT
-
+switch (classeDps) {
+  case 'GUERRER':
+    raoDps = 'ACCEPTABLE';
+  case 'MAG':
+    raoDps = 'NO RECOMANAT';
+  case 'ARQUER':
+    raoDps = 'EXCEL·LENT';
+  case 'ASSASSÍ':
+    raoDps = 'EXCEL·LENT';
+    break;
+}
 // Afegir al DOM la classeDps i raoDps
 recomanacionsGrid.innerHTML += `
   <div class="recomanacio-card dps">
@@ -316,7 +436,48 @@ let classeVelocitat; // (GUERRER, MAG, ARQUER, ASSASSÍ)
 let raoVelocitat; // (EXCEL·LENT, ACCEPTABLE, NO RECOMANAT)
 
 // Utilitza switch per determinar la millor classe per a velocitat
-
+switch (millorVelocitatNom) {
+  case 'GUERRER':
+    classeVelocitat = 'GUERRER';
+    if (velocitatGuerrer >= 80) {
+      raoVelocitat = 'EXCEL·LENT';
+    } else if (velocitatGuerrer >= 40) {
+      raoVelocitat = 'ACCEPTABLE';
+    } else {
+      raoVelocitat = 'NO RECOMANAT';
+    }
+    break;
+  case 'MAG':
+    classeVelocitat = 'MAG';
+    if (velocitatMag >= 80) {
+      raoVelocitat = 'EXCEL·LENT';
+    } else if (velocitatMag >= 40) {
+      raoVelocitat = 'ACCEPTABLE';
+    } else {
+      raoVelocitat = 'NO RECOMANAT';
+    }
+    break;
+  case 'ARQUER':
+    classeVelocitat = 'ARQUER';
+    if (velocitatArquer >= 80) {
+      raoVelocitat = 'EXCEL·LENT';
+    } else if (velocitatArquer >= 40) {
+      raoVelocitat = 'ACCEPTABLE';
+    } else {
+      raoVelocitat = 'NO RECOMANAT';
+    }
+    break;
+  case 'ASSASSÍ':
+    classeVelocitat = 'ASSASSÍ';
+    if (velocitatAssassi >= 80) {
+      raoVelocitat = 'EXCEL·LENT';
+    } else if (velocitatAssassi >= 40) {
+      raoVelocitat = 'ACCEPTABLE';
+    } else {
+      raoVelocitat = 'NO RECOMANAT';
+    }
+    break;
+}
 // Afegir al DOM la classeVelocitat i la raoVelocitat
 recomanacionsGrid.innerHTML += `
   <div class="recomanacio-card velocitat">
@@ -336,7 +497,48 @@ let classeMagic; // (GUERRER, MAG, ARQUER, ASSASSÍ)
 let raoMagic; // (EXCEL·LENT, ACCEPTABLE, NO RECOMANAT)
 
 // Utilitza switch per determinar la millor classe per a màgia
-
+switch (millorMagiaNom) {
+  case 'GUERRER':
+    classeMagic = 'GUERRER';
+    if (magiaGuerrer >= 80) {
+      raoMagic = 'EXCEL·LENT';
+    } else if (magiaGuerrer >= 40) {
+      raoMagic = 'ACCEPTABLE';
+    } else {
+      raoMagic = 'NO RECOMANAT';
+    }
+    break;
+  case 'MAG':
+    classeMagic = 'MAG';
+    if (magiaMag >= 80) {
+      raoMagic = 'EXCEL·LENT';
+    } else if (magiaMag >= 40) {
+      raoMagic = 'ACCEPTABLE';
+    } else {
+      raoMagic = 'NO RECOMANAT';
+    }
+    break;
+  case 'ARQUER':
+    classeMagic = 'ARQUER';
+    if (magiaArquer >= 80) {
+      raoMagic = 'EXCEL·LENT';
+    } else if (magiaArquer >= 40) {
+      raoMagic = 'ACCEPTABLE';
+    } else {
+      raoMagic = 'NO RECOMANAT';
+    }
+    break;
+  case 'ASSASSÍ':
+    classeMagic = 'ASSASSÍ';
+    if (magiaAssassi >= 80) {
+      raoMagic = 'EXCEL·LENT';
+    } else if (magiaAssassi >= 40) {
+      raoMagic = 'ACCEPTABLE';
+    } else {
+      raoMagic = 'NO RECOMANAT';
+    }
+    break;
+}
 // Afegir al DOM la classeMagic i raoMagic
 recomanacionsGrid.innerHTML += `
   <div class="recomanacio-card magic">
