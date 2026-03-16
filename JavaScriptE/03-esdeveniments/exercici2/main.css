@@ -1,0 +1,274 @@
+/* =============================================
+   NINJA FRUIT — Estils
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: #0a0a0f;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  cursor: crosshair;
+  user-select: none;
+}
+
+/* ---- HUD ---- */
+.hud {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.6rem 2rem;
+  background: rgba(0, 0, 0, 0.7);
+  border-bottom: 2px solid #ff4d6d;
+  backdrop-filter: blur(6px);
+}
+
+.hud-bloc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.hud-label {
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  color: #ff4d6d;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.hud-valor {
+  font-family: 'Bangers', cursive;
+  font-size: 2rem;
+  color: #fff;
+  letter-spacing: 2px;
+}
+
+/* ---- ZONA DE JOC ---- */
+.zona-joc {
+  position: fixed;
+  top: 60px; /* deixa espai exacte al HUD */
+  left: 0;
+  width: 100vw;
+  height: calc(100vh - 60px);
+  overflow: hidden;
+
+  /* Fons: gradient fosc amb línies subtils */
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 60px,
+      rgba(255, 77, 109, 0.03) 60px,
+      rgba(255, 77, 109, 0.03) 61px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 60px,
+      rgba(255, 77, 109, 0.03) 60px,
+      rgba(255, 77, 109, 0.03) 61px
+    ),
+    linear-gradient(160deg, #0a0a0f 0%, #12001a 100%);
+}
+
+/* ---- FRUITES ---- */
+/*
+  Cada fruita és un <div class="fruita">
+  que el JS crea i afegeix a la zona-joc.
+  
+  Propietats importants:
+  - position: absolute  → per poder-les moure amb top/left
+  - cursor: pointer     → indica que es pot fer clic
+*/
+.fruita {
+  position: absolute;
+  font-size: 6rem;
+  cursor: pointer;
+  transition: transform 0.1s;
+  filter: drop-shadow(0 4px 12px rgba(255, 200, 0, 0.4));
+  animation: bamboleo 1.5s ease-in-out infinite alternate;
+  line-height: 1;
+  z-index: 10;
+}
+
+/* Petita oscil·lació visual mentre cauen */
+@keyframes bamboleo {
+  from {
+    transform: rotate(-8deg) scale(1);
+  }
+  to {
+    transform: rotate(8deg) scale(1.05);
+  }
+}
+
+/* ---- EFECTE TALL (espurnes quan fas clic) ---- */
+/*
+  El JS mourà aquest element on cliques
+  i li traurà la classe per reiniciar l'animació
+*/
+.tall-efecte {
+  position: fixed;
+  pointer-events: none;
+  font-size: 2rem;
+  z-index: 200;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: none;
+}
+
+.tall-efecte.actiu {
+  animation: explota 0.4s ease-out forwards;
+}
+
+@keyframes explota {
+  0% {
+    opacity: 1;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.6);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
+
+/* ---- PARTÍCULES D'ESCLAT ---- */
+/*
+  Petits punts de color que surten quan talles una fruita.
+  El JS les crea i les esborra.
+*/
+.particula {
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 150;
+  animation: particula-vol 0.6s ease-out forwards;
+}
+
+@keyframes particula-vol {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--dx), var(--dy)) scale(0.2);
+  }
+}
+
+/* ---- TEXT DE PUNTS (+10) que flota ---- */
+.punt-float {
+  position: fixed;
+  font-family: 'Bangers', cursive;
+  font-size: 2rem;
+  color: #ffe94d;
+  pointer-events: none;
+  z-index: 200;
+  animation: puja 0.8s ease-out forwards;
+  text-shadow: 0 0 10px rgba(255, 233, 77, 0.8);
+}
+
+@keyframes puja {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-80px);
+  }
+}
+
+/* ---- MISSATGE D'INICI i GAME OVER ---- */
+.missatge-inici,
+.missatge-fi {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 50;
+  padding: 2rem 3rem;
+  background: rgba(0, 0, 0, 0.85);
+  border: 2px solid #ff4d6d;
+  border-radius: 1.5rem;
+  backdrop-filter: blur(8px);
+}
+
+.missatge-icon {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+}
+
+.missatge-inici h1,
+.missatge-fi h1 {
+  font-family: 'Bangers', cursive;
+  font-size: 4rem;
+  letter-spacing: 4px;
+  color: #ff4d6d;
+  margin-bottom: 1rem;
+}
+
+.missatge-inici p,
+.missatge-fi p {
+  font-size: 1.1rem;
+  color: #ccc;
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.missatge-fi .punts-finals {
+  font-family: 'Bangers', cursive;
+  font-size: 3rem;
+  color: #ffe94d;
+  margin: 1rem 0;
+}
+
+#btn-iniciar,
+#btn-reiniciar {
+  margin-top: 1.5rem;
+  padding: 0.8rem 2.5rem;
+  background: #ff4d6d;
+  color: white;
+  border: none;
+  border-radius: 2rem;
+  font-family: 'Bangers', cursive;
+  font-size: 1.6rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+
+#btn-iniciar:hover,
+#btn-reiniciar:hover {
+  background: #e63c5a;
+  transform: scale(1.05);
+}
+
+/* ---- AMAGAT ---- */
+.amagat {
+  display: none !important;
+}

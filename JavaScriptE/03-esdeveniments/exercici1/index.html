@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial - Esdeveniments Interactius</title>
+    <link rel="stylesheet" href="./main.css">
+    <script type="module" src="./main.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <div class="header">
+        <h1>🎓 ESDEVENIMENTS INTERACTIUS 🎓</h1>
+        <p class="instruccions">Aprèn a fer els teus jocs <strong>INTERACTIUS</strong> amb
+          esdeveniments!</p>
+      </div>
+
+      <!-- Camp de Batalla -->
+      <div class="batalla-section">
+        <h2>Camp de Batalla</h2>
+        <div class="camp-batalla">
+          <!-- Jugador -->
+          <div class="combatent jugador-container">
+            <div class="combatent-info">
+              <div class="combatent-nom">RYU</div>
+              <div class="combatent-sprite jugador-sprite"><img src="./img/ryu.webp"
+                  alt="Ryu Street Fighter"></div>
+              <div class="combatent-stats">
+                <div class="vida-container">
+                  <div class="stat-label">Vida:</div>
+                  <div class="vida-barra">
+                    <div class="vida-actual" id="vida-jugador-barra"></div>
+                  </div>
+                  <div class="vida-text">
+                    <span id="vida-jugador">100</span> / <span>100</span>
+                  </div>
+                </div>
+              </div>
+              <div class="combatent-stats">
+                <div class="stat-label">Atac:</div>
+                <div class="stat-valor" id="atac-jugador">25</div>
+                <div class="stat-label">Pocions:</div>
+                <div class="stat-valor" id="pocions-jugador">3</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Enemic -->
+          <div class="combatent enemic-container">
+            <div class="combatent-info">
+              <div class="combatent-nom" id="enemic-nom">CHIN-LI</div>
+              <div class="combatent-sprite enemic-sprite" id="enemic-sprite">
+                <img src="./img/chin-li.webp" alt="Chin Li Street Fighter">
+              </div>
+              <div class="combatent-stats">
+                <div class="vida-container">
+                  <div class="stat-label">Vida:</div>
+                  <div class="vida-barra enemic">
+                    <div class="vida-actual enemic" id="vida-enemic-barra"></div>
+                  </div>
+                  <div class="vida-text">
+                    <span id="vida-enemic">120</span> / <span id="vida-enemic-max">120</span>
+                  </div>
+                </div>
+              </div>
+              <div class="combatent-stats">
+                <div class="stat-label">Atac:</div>
+                <div class="stat-valor" id="atac-enemic">20</div>
+                <div class="stat-label">Pocions:</div>
+                <div class="stat-valor" id="pocions-enemic">3</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls del Joc -->
+      <div class="controls-section">
+        <h2>Controls de Combat</h2>
+        <div class="controls-grid">
+          <!-- Botó Atacar -->
+          <button class="btn-control atacar" id="btn-atacar">
+            <div class="btn-icon">⚔️</div>
+            <div class="btn-text">ATACAR</div>
+            <div class="btn-info">Causa 25-30 de dany</div>
+          </button>
+
+          <!-- Botó Pociótó -->
+          <button class="btn-control pocio" id="btn-pocio">
+            <div class="btn-icon">🧪</div>
+            <div class="btn-text">POCIÓ</div>
+            <div class="btn-info">Recupera 40 HP</div>
+          </button>
+
+        </div>
+      </div>
+
+      <!-- Estadístiques de la Batalla -->
+      <div class="stats-batalla-section">
+        <h2>Estadístiques de la Batalla</h2>
+        <div class="stats-batalla-grid">
+          <div class="stat-batalla">
+            <div class="stat-batalla-label">Torns:</div>
+            <div class="stat-batalla-valor" id="torns-total">0</div>
+          </div>
+          <div class="stat-batalla">
+            <div class="stat-batalla-label">Dany Causat:</div>
+            <div class="stat-batalla-valor" id="dany-causat">0</div>
+          </div>
+          <div class="stat-batalla">
+            <div class="stat-batalla-label">Dany Rebut:</div>
+            <div class="stat-batalla-valor" id="dany-rebut">0</div>
+          </div>
+          <div class="stat-batalla">
+            <div class="stat-batalla-label">Pocions:</div>
+            <div class="stat-batalla-valor" id="pocions-utilitzades">0</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Checklist Tutorial -->
+      <div class="checklist">
+        <h3>✅ Passos del Tutorial:</h3>
+        <ul>
+          <li>[X] Entendre què són els esdeveniments</li>
+          <li>[X] Seleccionar un element amb querySelector()</li>
+          <li>[X] Afegir un esdeveniment de click amb addEventListener()</li>
+          <li>[X] Crear una funció que s'executi quan es fa click</li>
+          <li>[X] Actualitzar el DOM dins de la funció</li>
+          <li>[X] Crear múltiples botons amb esdeveniments diferents</li>
+          <li>[X] Utilitzar condicionals dins dels esdeveniments</li>
+          <li>[X] Generar valors aleatoris per al combat</li>
+          <li>[X] Implementar torn de l'enemic automàtic</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

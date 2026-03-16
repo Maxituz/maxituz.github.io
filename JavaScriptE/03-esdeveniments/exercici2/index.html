@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🍉 Ninja Fruit - Esdeveniments Ratolí</title>
+    <link rel="stylesheet" href="./main.css">
+    <script type="module" src="./main.js"></script>
+  </head>
+  <body>
+
+    <!-- HUD superior -->
+    <div class="hud">
+      <div class="hud-bloc">
+        <span class="hud-label">PUNTS</span>
+        <span class="hud-valor" id="punts">0</span>
+      </div>
+      <div class="hud-bloc">
+        <span class="hud-label">VIDES</span>
+        <span class="hud-valor" id="vides">❤️❤️❤️</span>
+      </div>
+      <div class="hud-bloc">
+        <span class="hud-label">NIVELL</span>
+        <span class="hud-valor" id="nivell">1</span>
+      </div>
+    </div>
+
+    <!-- Zona de joc: aquí apareixeran les fruites -->
+    <div class="zona-joc" id="zona-joc">
+
+      <!-- 💡 Les fruites es crearan amb JavaScript i s'inseriran aquí -->
+
+      <!-- Missatge inicial (es mostrarà fins que comenci el joc) -->
+      <div class="missatge-inici" id="missatge-inici">
+        <div class="missatge-icon">🥷</div>
+        <h1>NINJA FRUIT</h1>
+        <p>Fes <strong>click</strong> sobre les fruites per tallar-les!</p>
+        <p>Si una fruita arriba al terra, perds una vida.</p>
+        <button id="btn-iniciar">COMENÇAR</button>
+      </div>
+
+    </div>
+
+  </body>
+</html>
