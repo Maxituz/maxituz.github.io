@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<joc nom="juegecito" plataforma="nes">
+  <genere>Acció</genere>
+  <any>2019</any>
+  <nivell numero="1">
+    <nom>Overworld</nom>
+    <numeroEnemics>2</numeroEnemics>
+    <puntsMaxims>500</puntsMaxims>
+    <completat>true</completat>
+  </nivell>
+  <nivell numero="2">
+    <nom>The Nether</nom>
+    <numeroEnemics>4</numeroEnemics>
+    <puntsMaxims>800</puntsMaxims>
+    <completat>true</completat>
+  </nivell>
+  <nivell numero="3">
+    <nom>The End</nom>
+    <numeroEnemics>1</numeroEnemics>
+    <puntsMaxims>1000</puntsMaxims>
+    <completat>false</completat>
+  </nivell>
+</joc>

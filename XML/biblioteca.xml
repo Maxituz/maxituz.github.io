@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<biblioteca>
+  <llibre isbn="978-0-13-601970-1">
+    <titol>El primer llibre</titol>
+    <autor>El autor ese</autor>
+    <any>2039</any>
+    <preu>499,98</preu>
+  </llibre>
+    <llibre isbn="978-0-13-601970-2">
+    <titol>El segon llibre</titol>
+    <autor>El amic del autor ese</autor>
+    <any>2029</any>
+    <preu>50</preu>
+  </llibre>
+    <llibre isbn="978-0-13-601970-3">
+    <titol>El tercer llibre</titol>
+    <autor>El autor ese</autor>
+    <any>2019</any>
+    <preu>200</preu>
+  </llibre>
+</biblioteca>
