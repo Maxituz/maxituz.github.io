@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="comanda">
+    <xs:complexType>
+      <xs:sequence>
+
+        <xs:element name="proveidor" minOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nom" minOccurs="1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" ></xs:maxLength>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cif" minOccurs="1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                      <xs:length value="9"></xs:length>
+                    <xs:pattern value="[a-zA-Z].{8}"></xs:pattern>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="email" minOccurs="1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string"></xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <xs:element name="client" minOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nom" minOccurs="1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50"></xs:maxLength>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cif" minOccurs="1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:pattern value="[a-zA-Z].{8}"></xs:pattern>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="email" minOccurs="1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="telefon" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:positiveInteger">
+                    <xs:pattern value="[6-9][0-9]{8}"></xs:pattern>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <xs:element name="productes" minOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="producte" minOccurs="1" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="nom" minOccurs="1">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:maxLength value="100"></xs:maxLength>
+                        </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="categoria" minOccurs="1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="Processadors">
+                    </xs:enumeration>
+                    <xs:enumeration value="Memòria"></xs:enumeration>
+                    <xs:enumeration value="Emmagatzematge"></xs:enumeration>
+                    <xs:enumeration value="Xarxa"></xs:enumeration>
+                    <xs:enumeration value="Perifèrics"></xs:enumeration>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="quantitat" minOccurs="1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:positiveInteger">
+                    <xs:minInclusive value="1"></xs:minInclusive>
+                    <xs:maxInclusive value="500"></xs:maxInclusive>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="preu_unitat" minOccurs="1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:decimal">
+                    <xs:minInclusive value="0.01"></xs:minInclusive>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+                  </xs:sequence>
+                    <xs:attribute name="ref" type="xs:string" use="required"></xs:attribute>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+
+      <xs:attribute name="id" type="xs:positiveInteger" use="required"/>
+      <xs:attribute name="data" type="xs:date" use="required"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

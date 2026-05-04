@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Encara que sigui un int, el id ha d'estar entre cometes, a part el format de data ha de ser YYYY-MM-DD -->
+<!-- <comanda id=1042 data="15-11-2024" -->
+<comanda id="1042" data="2024-11-15">
+
+  <proveidor>
+    <nom>ElectroSupply SL</nom>
+    <cif>B12345678</cif>
+    <email>vendes@electrosupply.cat</email>
+  </proveidor>
+
+  <client>
+    <nom>TechDist SA</nom>
+    <!-- L'últim caràcter ha de ser un número -->
+    <!-- <cif>A98765432X</cif> -->
+    <cif>A98765432</cif>
+    <email>compres@techdist.cat</email>
+    <!-- El telèfon no pot tenir espais -->
+    <!-- <telefon>934 567 890</telefon>-->
+    <telefon>934567890</telefon>
+  </client>
+
+  <productes>
+    <producte ref="CPU-I7-14">
+      <nom>Intel Core i7-14700K</nom>
+      <categoria>Processadors</categoria>
+      <quantitat>10</quantitat>
+      <preu_unitat>389.99</preu_unitat>
+    </producte>
+    <producte ref="RAM-DDR5-32">
+      <nom>Kingston Fury Beast DDR5 32GB</nom>
+      <!-- La categoria RAM no és vàlida -->
+      <!-- <categoria>RAM</categoria> -->
+      <categoria>Memòria</categoria>
+      <!-- La quantitat ha de ser mínim de 1 -->
+      <!-- <quantitat>0</quantitat> -->
+      <quantitat>1</quantitat>
+      <preu_unitat>129.99</preu_unitat>
+    </producte>
+    <producte ref="SSD-NVMe-1T">
+      <nom>Samsung 990 Pro 1TB</nom>
+      <categoria>Emmagatzematge</categoria>
+      <quantitat>25</quantitat>
+      <!-- El preu ha de ser positiu -->
+      <!-- <preu_unitat>-89.99</preu_unitat> -->
+      <preu_unitat>89.99</preu_unitat>
+    <!-- No s'ha tancat correctament producte -->
+    <!-- <producte> -->
+    </producte>
+  </productes>
+</comanda>
