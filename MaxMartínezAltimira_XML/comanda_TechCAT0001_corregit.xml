@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Encara que sigui un int, el id ha d'estar entre cometes, a part el format de data ha de ser YYYY-MM-DD -->
 <!-- <comanda id=1042 data="15-11-2024" -->
-<comanda id="1042" data="2024-11-15">
+<comanda id="1042" data="2024-11-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="comanda.xsd">
 
   <proveidor>
     <nom>ElectroSupply SL</nom>
@@ -17,7 +18,7 @@
     <email>compres@techdist.cat</email>
     <!-- El telèfon no pot tenir espais -->
     <!-- <telefon>934 567 890</telefon>-->
-    <telefon>934567890</telefon>
+    <telefon>938421392</telefon>
   </client>
 
   <productes>

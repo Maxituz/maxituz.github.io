@@ -1,0 +1,46 @@
+{
+  "$schema": "./schema_comanda.json",
+  "id": "GV-070907",
+  "data": "2026-05-11T15:04:00Z",
+  "usuari": {
+    "id": 4,
+    "username": "Max",
+    "email": "max_martinezaltimira@iescarlesvallbonca.cat",
+    "pais": "ESP"
+  },
+  "jocs": [
+    {
+      "id": 2,
+      "titol": "Minecraft",
+      "plataforma": "Windows",
+      "preu": 29.99,
+      "dlc": false
+    },
+    {
+      "id": 40,
+      "titol": "Factorio",
+      "plataforma": "Windows",
+      "preu": 39.99,
+      "dlc": false
+    },
+    {
+      "id": 55,
+      "titol": "Pragmata",
+      "plataforma": "Windows",
+      "preu": 45,
+      "dlc": false
+    },
+    {
+      "id": 41,
+      "titol": "Factorio: Space Age",
+      "plataforma": "Windows",
+      "preu": 29.99,
+      "dlc": true
+    }
+  ],
+  "pagament": {
+    "metode": "paypal",
+    "completat": true
+  },
+  "total": 144.97
+}
